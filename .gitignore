@@ -2,3 +2,6 @@ Thumbs.db
 Desktop.ini
 .DS_Store
 opencode.json
+.wrangler/
+dev-out.log
+dev-err.log
