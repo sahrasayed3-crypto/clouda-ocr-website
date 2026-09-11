@@ -46,343 +46,211 @@
 
 <header class="page-hero">
 <div class="wrap">
+<div class="hero-inner">
+<div class="hero-main">
 <div class="kicker">Support &amp; Partnerships</div>
 <h1>Support the transition from validated OCR research infrastructure to real model adaptation and hardware-validated training.</h1>
-<p>Clouda OCR is an independent open-source Arabic OCR &amp; Document AI project. The benchmark, data-preparation and training-planning infrastructure is built and a 177-page Arabic benchmark is complete. What is missing now is persistent local compute and supporting storage to run real model-adaptation and hardware-validation work.</p>
-<div class="page-meta" aria-label="Project stage">
+<div class="page-meta">
 <span class="stagechip">HARDWARE-VALIDATION STAGE</span>
 <span>No project-trained production OCR model yet</span>
 <span>Open source &amp; non-equity</span>
 </div>
 </div>
+<div class="hero-aside">
+<p>Clouda OCR is an independent open-source Arabic OCR &amp; Document AI project. The benchmark, data-preparation and training-planning infrastructure is built and a <strong>177-page Arabic benchmark</strong> is complete. What is missing now is persistent local compute and supporting storage to run real model-adaptation and hardware-validation work.</p>
+</div>
+</div>
+</div>
 </header>
 
-<section class="funding" aria-labelledby="funding-goal">
+<section class="channels" aria-labelledby="support-channels">
 <div class="wrap">
-<div class="sectionhead">
-<h2 id="funding-goal">Current-phase cash target: $15,000</h2>
-<p>$15,000 is the total current-phase cash target, not a minimum contribution. Any amount is useful. The full target does not need to come from one supporter or one payment.</p>
-</div>
+<h2 id="support-channels" class="sr-only">Two primary support channels</h2>
+<div class="channels-grid">
 
-<div class="fundbox">
-<div class="fund-main">
-<div class="amount">$15,000</div>
-<div class="amountsub">Current phase only</div>
-<p class="note"><b>Cash support and infrastructure support are separate channels.</b> Cloud credits, GPU/CPU access, storage, donated hardware, data access, and research collaboration are welcomed separately and are not counted toward the $15,000 cash target.</p>
-<p class="muted">This is project support, not an equity round. Contributions of any size help move the current phase forward.</p>
-<div class="actions">
+<div class="channel-primary">
+<div class="channel-label">Primary Support Channel</div>
+<h3>Financial Support</h3>
+<div class="channel-core">
+<div class="channel-amount">$15,000<span class="channel-amount-note">current-phase cash target</span></div>
+<p>Direct cash for hardware, storage, power, operating costs, and maintenance. Used to build a local GPU-capable workstation and supporting reliability.</p>
+<p class="channel-sep">Any amount is useful. Not a minimum contribution. The full target does not need to come from one supporter or one payment.</p>
+<p class="channel-investor">This is project support, not an equity round.</p>
+</div>
+<p class="channel-note"><b>Cash support and infrastructure support are separate channels.</b> Cloud credits, GPU/CPU access, storage, donated hardware, data access, and research collaboration are welcomed separately and are not counted toward the $15,000 cash target.</p>
+<div class="channel-actions">
 <a class="btn primary" href="https://paypal.me/SoherWhabh" target="_blank" rel="noopener">Support via PayPal</a>
+</div>
+</div>
+
+<div class="channel-secondary">
+<div class="channel-label">Primary Support Channel</div>
+<h3>Compute &amp; AI Infrastructure Support</h3>
+<div class="channel-core">
+<p>Non-cash technical infrastructure that enables training, evaluation, and data work.</p>
+<ul class="channel-capabilities">
+<li><strong>GPU / Cloud compute</strong> — evaluation, training bursts, model comparison</li>
+<li><strong>CPU compute</strong> — preprocessing, rendering, synthetic generation</li>
+<li><strong>AI API credits / tokens</strong> — inference evaluation, benchmark validation</li>
+<li><strong>Storage / infrastructure</strong> — persistent data, dataset hosting, archives</li>
+<li><strong>Hardware / compute access</strong> — donated or loaned workstations, GPU servers</li>
+</ul>
+</div>
+<div class="channel-actions">
 <a class="btn light" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contact@cloudaocr.xyz&amp;su=Infrastructure%20Support%20%E2%80%94%20Clouda%20OCR" target="_blank" rel="noopener">Offer Infrastructure</a>
+<a class="btn ghost" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contact@cloudaocr.xyz&amp;su=Partnership%20Inquiry%20%E2%80%94%20Clouda%20OCR" target="_blank" rel="noopener">Partner With Us</a>
 </div>
+<p class="channel-research"><b>Research &amp; Data Collaboration</b> — Arabic source collections, permissions, benchmarking, evaluation, and technical collaboration are also welcome where appropriate. This is collaboration, not a funding channel.</p>
 </div>
+
 </div>
 </div>
 </section>
 
-<section aria-labelledby="bottleneck">
+<section class="why-needed" aria-labelledby="why-needed">
 <div class="wrap">
-<div class="sectionhead">
-<div class="kicker">Current bottleneck</div>
-<h2 id="bottleneck">The software foundation for the next validation stage is largely in place. Suitable hardware is the remaining constraint.</h2>
+<div class="sectionhead why-head">
+<h2 id="why-needed">The software foundation is built. Hardware validation is what remains.</h2>
+<p>The project is asking for support at a specific technical stage — not from a standing start. What exists, what is blocked, and what persistent local compute makes possible.</p>
 </div>
-<p>Training-planning, dataset, model-adapter, preflight, checkpoint/resume and evaluation infrastructure have advanced substantially. The remaining critical work — real model adaptation with hardware-validated settings — needs a suitable local machine plus supporting storage and reliability. Cloud remains useful for bursts that exceed local capacity.</p>
-
-<div class="evidence-list">
-<div class="evidence-item">
-<strong>Infrastructure built</strong>
-<span>Dataset, training-planning, adapter, preflight, checkpoint and evaluation tooling are developed project work.</span>
+<div class="narrative">
+<div class="narrative-col">
+<div class="narrative-col-head">
+<h3>What already exists</h3>
+<span class="narrative-badge built">Built</span>
 </div>
-<div class="evidence-item">
-<strong>Validation pending</strong>
-<span>Real VRAM usage, mixed-precision behavior, throughput, checkpoint handling and training performance require real hardware.</span>
+<ul class="narrative-list">
+<li><strong>Open-source codebase</strong> — a working, public codebase for the OCR and Document AI pipeline.</li>
+<li><strong>Completed <span class="narrative-proof">177-page benchmark</span></strong> — controlled Arabic OCR benchmark with per-model outputs, Arabic-specific scoring and public audit records.</li>
+<li><strong>Leading candidate identified</strong> — benchmark results point to a current leading candidate for validation.</li>
+<li><strong>Data &amp; training infrastructure</strong> — data-preparation, evaluation, training-planning, preflight and checkpoint/resume tooling has been developed, with newer training components currently awaiting final integration review.</li>
+<li><strong>Source material identified</strong> — sufficient material to proceed with the current phase. Actual training use remains subject to licensing, provenance, and holdout protections.</li>
+<li><strong>Measurable roadmap</strong> — expand benchmark, adapt the selected model, evaluate, iterate.</li>
+</ul>
 </div>
-<div class="evidence-item">
-<strong>Cloud role</strong>
-<span>Useful for burst capacity beyond local hardware, not a substitute for persistent development access.</span>
+<div class="narrative-col narrative-blocked">
+<div class="narrative-col-head">
+<h3>What is still blocked</h3>
+<span class="narrative-badge blocked">Blocked</span>
 </div>
-<div class="evidence-item">
-<strong>Not yet possible</strong>
-<span>Large-scale real training does not run on the current machine; that is exactly what this phase funds.</span>
-</div>
-</div>
-</div>
-</section>
-
-<section class="progress" aria-labelledby="already-have">
-<div class="wrap">
-<div class="sectionhead">
-<div class="kicker">What we already have</div>
-<h2 id="already-have">Existing technical foundation</h2>
-</div>
-<p>The project is asking for support at a specific technical stage, not from a standing start.</p>
-
-<div class="foundation-grid">
-<div class="foundation-major">
-<div class="foundation-item featured">
-<strong>Open-source codebase</strong>
-<p>A working, public codebase for the OCR and Document AI pipeline.</p>
-</div>
-<div class="foundation-item featured">
-<strong>Completed 177-page benchmark</strong>
-<p>A controlled Arabic OCR benchmark with per-model outputs, Arabic-specific scoring and public audit records.</p>
-</div>
-<div class="foundation-item featured">
-<strong>Leading candidate identified</strong>
-<p>Benchmark results point to a current leading candidate model for further validation.</p>
-</div>
-</div>
-<div class="foundation-secondary">
-<div class="foundation-item">
-<strong>Data &amp; training infrastructure</strong>
-<p>Data-preparation, evaluation, training-planning, preflight and checkpoint/resume tooling has been developed, with newer training components currently awaiting final integration review.</p>
-</div>
-<div class="foundation-item">
-<strong>Source material identified</strong>
-<p>Sufficient identified/prepared source material to proceed with the current phase — actual training use remains subject to licensing, provenance, and holdout protections.</p>
-</div>
-<div class="foundation-item">
-<strong>Measurable roadmap</strong>
-<p>Defined next milestones: expand the benchmark, adapt the selected model, evaluate, iterate.</p>
+<ul class="narrative-list">
+<li><strong>Real VRAM usage</strong> — actual GPU memory requirements need hardware validation.</li>
+<li><strong>Mixed-precision behavior</strong> — BF16/FP16 mixed-precision behavior must be measured on real hardware, not assumed.</li>
+<li><strong>Throughput ceilings</strong> — batch-size limits and training throughput require real hardware.</li>
+<li><strong>Checkpoint behavior</strong> — save/load sizes, resume reliability, and OOM recovery need real-GPU testing.</li>
+<li><strong>Large-scale training</strong> — full model adaptation and pilot training do not run on the current machine.</li>
+</ul>
+<div class="narrative-foot">
+<p><b>Why local compute:</b> repeatability, persistent access, restricted-data handling, lower iteration friction. Cloud remains useful for bursts that exceed local capacity.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
 
-<section aria-labelledby="why-local">
-<div class="wrap">
-<div class="sectionhead">
-<div class="kicker">Why local compute now</div>
-<h2 id="why-local">Validation needs repetition, not one-off access</h2>
-</div>
-<p>Hardware-validation work is inherently iterative, and cloud access alone does not fit that pattern.</p>
-
-<div class="why-local-editorial">
-<div class="why-local-item">
-<strong>Repeatability</strong>
-<p>The same run must be repeated many times to measure memory, throughput, precision behavior and failure recovery.</p>
-</div>
-<div class="why-local-item">
-<strong>Persistent access</strong>
-<p>Development continues on the project's own schedule rather than inside expiring credit windows.</p>
-</div>
-<div class="why-local-item">
-<strong>Restricted data</strong>
-<p>Some licensed or restricted material can only be processed under local handling terms.</p>
-</div>
-<div class="why-local-item">
-<strong>Lower iteration friction</strong>
-<p>Small diagnostic runs and config changes are cheap locally; every step does not need a cloud job.</p>
-</div>
-<div class="why-local-item">
-<strong>Cloud for bursts</strong>
-<p>Cloud capacity is reserved for workloads that genuinely exceed local hardware. Local is chosen for control and persistence, not assumed to be cheaper.</p>
-</div>
-</div>
-</div>
-</section>
-
-<section aria-labelledby="allocation">
+<section class="funding" aria-labelledby="allocation">
 <div class="wrap">
 <div class="sectionhead">
 <div class="kicker">Indicative allocation</div>
 <h2 id="allocation">How the $15,000 cash target would be used</h2>
 </div>
-<p>Indicative allocation, not a fixed purchase order. The exact GPU and component mix will be selected against current market pricing and validated workload requirements rather than locked to one vendor or SKU today.</p>
+<p class="section-intro">Indicative allocation, not a fixed purchase order. The exact GPU and component mix will be selected against current market pricing and validated workload requirements rather than locked to one vendor or SKU today.</p>
 
-<div class="allocation-list">
-<div class="allocation-item current">
-<div class="allocation-header-row">
-<span class="allocation-status">Current Need</span>
-<span class="allocation-amount">$7,000</span>
-</div>
-<div class="allocation-body">
+<div class="ledger">
+<div class="ledger-group">
+<div class="ledger-section-label">Current Need</div>
+
+<div class="ledger-row">
+<div class="ledger-meta">
+<span class="ledger-amount">$7,000</span>
 <strong>Local AI workstation / GPU-capable compute</strong>
+</div>
 <p>GPU VRAM headroom, system RAM, fast NVMe scratch/workspace, suitable PSU, cooling and an expandable platform — for local preprocessing, model adaptation, pilot training and hardware validation.</p>
 </div>
-</div>
 
-<div class="allocation-item current">
-<div class="allocation-header-row">
-<span class="allocation-status">Current Need</span>
-<span class="allocation-amount">$1,500</span>
-</div>
-<div class="allocation-body">
+<div class="ledger-row">
+<div class="ledger-meta">
+<span class="ledger-amount">$1,500</span>
 <strong>Storage</strong>
+</div>
 <p>4 TB NVMe as the active training/benchmark/export workspace, plus approximately 24 TB bulk storage for locally permitted project data, prepared datasets, generated artifacts and backups.</p>
 </div>
-</div>
 
-<div class="allocation-item current">
-<div class="allocation-header-row">
-<span class="allocation-status">Current Need</span>
-<span class="allocation-amount">$1,000</span>
-</div>
-<div class="allocation-body">
+<div class="ledger-row">
+<div class="ledger-meta">
+<span class="ledger-amount">$1,000</span>
 <strong>Power &amp; reliability</strong>
+</div>
 <p>UPS, quality PSU where required, cooling, surge/electrical protection and essential cabling/adapters for safe long-running local workloads.</p>
 </div>
-</div>
 
-<div class="allocation-item current">
-<div class="allocation-header-row">
-<span class="allocation-status">Current Need</span>
-<span class="allocation-amount">$1,000</span>
-</div>
-<div class="allocation-body">
+<div class="ledger-row">
+<div class="ledger-meta">
+<span class="ledger-amount">$1,000</span>
 <strong>APIs / temporary compute / evaluation</strong>
+</div>
 <p>Short-lived API access, temporary compute, evaluation services and benchmarking tools for jobs that temporarily exceed local capacity. Not intended to replace the local workstation.</p>
 </div>
-</div>
 
-<div class="allocation-item current">
-<div class="allocation-header-row">
-<span class="allocation-status">Current Need</span>
-<span class="allocation-amount">$1,000</span>
-</div>
-<div class="allocation-body">
+<div class="ledger-row">
+<div class="ledger-meta">
+<span class="ledger-amount">$1,000</span>
 <strong>Operating costs</strong>
+</div>
 <p>Electricity, internet, shipping/logistics/import-related project costs where applicable, and small recurring service costs needed during the current phase. Not salary or personal household expenses.</p>
 </div>
-</div>
 
-<div class="allocation-item current">
-<div class="allocation-header-row">
-<span class="allocation-status">Current Need</span>
-<span class="allocation-amount">$500</span>
-</div>
-<div class="allocation-body">
+<div class="ledger-row">
+<div class="ledger-meta">
+<span class="ledger-amount">$500</span>
 <strong>Maintenance / replacement parts</strong>
+</div>
 <p>Replacement fans, cables, adapters, storage replacement, small repair parts and other minor hardware failures. Maintenance contingency, not general-purpose spending.</p>
 </div>
 </div>
 
-<div class="allocation-item conditional">
-<div class="allocation-header-row">
-<span class="allocation-status">Conditional</span>
-<span class="allocation-amount">$500</span>
-</div>
-<div class="allocation-body">
+<div class="ledger-group conditional">
+<div class="ledger-section-label">Conditional</div>
+
+<div class="ledger-row">
+<div class="ledger-meta">
+<span class="ledger-amount">$500</span>
 <strong>Specialist help if needed</strong>
+</div>
 <p>Used only when a specific blocker requires targeted OCR, ML, systems, storage, electrical, or infrastructure expertise. Not planned consulting spend.</p>
 </div>
-</div>
 
-<div class="allocation-item conditional">
-<div class="allocation-header-row">
-<span class="allocation-status">Conditional</span>
-<span class="allocation-amount">$2,500</span>
-</div>
-<div class="allocation-body">
+<div class="ledger-row">
+<div class="ledger-meta">
+<span class="ledger-amount">$2,500</span>
 <strong>Second-stage hardware expansion — conditional</strong>
+</div>
 <p>Deliberately not pre-committed to a specific component. Held until early real-model adaptation and pilot training reveal the actual bottleneck: additional GPU capacity, more VRAM-capable hardware, RAM, NVMe or bulk storage, stronger power/cooling, or other hardware proven necessary by measurements. Not spent before the first hardware-validation results justify it.</p>
 </div>
 </div>
+</div>
 
-<p class="allocation-total"><b>Total: $15,000</b> — indicative allocation for the current phase, not a rigid purchase order.</p>
+<p class="ledger-total"><b>Total: $15,000</b> — indicative allocation for the current phase, not a rigid purchase order.</p>
 </div>
 </section>
 
-<section aria-labelledby="partial">
-<div class="wrap">
-<div class="sectionhead">
-<div class="kicker">Partial support</div>
-<h2 id="partial">What partial support can unlock</h2>
-</div>
-<p>Every contribution moves the same current-phase plan forward. Smaller amounts do not wait for larger ones to become useful.</p>
-
-<div class="partial-support">
-<div class="partial-item">
-<strong>Any amount</strong>
-<span>Contributes directly to the current technical phase.</span>
-</div>
-<div class="partial-item">
-<strong>Smaller support</strong>
-<span>Can help with operating costs, evaluation services, cabling, maintenance, storage accessories, or benchmark-related needs.</span>
-</div>
-<div class="partial-item">
-<strong>Larger support</strong>
-<span>Can directly accelerate workstation, storage, reliability, or hardware-expansion milestones.</span>
-</div>
-</div>
-</div>
-</section>
-
-<section class="scale" aria-labelledby="other-support">
-<div class="wrap">
-<div class="sectionhead">
-<div class="kicker">Other ways to support</div>
-<h2 id="other-support">Infrastructure &amp; research support — separate channel</h2>
-</div>
-<p>Cloud credits, GPU/CPU access, storage, donated hardware, data access, and research collaboration are welcomed and tracked separately from the $15,000 cash target.</p>
-
-<div class="infrastructure-grid">
-<div class="infrastructure-card">
-<span class="infrastructure-type">Separate Support</span>
-<strong>GPU / Cloud</strong>
-<p>Heavy evaluation and future training where data permissions allow.</p>
-</div>
-<div class="infrastructure-card">
-<span class="infrastructure-type">Separate Support</span>
-<strong>CPU</strong>
-<p>Large-scale preprocessing, rendering and synthetic generation.</p>
-</div>
-<div class="infrastructure-card">
-<span class="infrastructure-type">Separate Support</span>
-<strong>Storage / Hardware</strong>
-<p>Persistent infrastructure for important project data and artifacts.</p>
-</div>
-<div class="infrastructure-card">
-<span class="infrastructure-type">Separate Support</span>
-<strong>Data / Research</strong>
-<p>Arabic source collections, permissions, benchmarking and technical collaboration.</p>
-</div>
-</div>
-
-<div class="actions infrastructure-actions">
-<a class="btn primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contact@cloudaocr.xyz&amp;su=Partnership%20Inquiry%20%E2%80%94%20Clouda%20OCR" target="_blank" rel="noopener">Partner With Us</a>
-<a class="btn light" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contact@cloudaocr.xyz&amp;su=Infrastructure%20Support%20%E2%80%94%20Clouda%20OCR" target="_blank" rel="noopener">Offer Infrastructure</a>
-<a class="btn light" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=contact@cloudaocr.xyz&amp;su=Clouda%20OCR%20Inquiry" target="_blank" rel="noopener">Contact</a>
-</div>
-</div>
-</section>
-
-<section aria-labelledby="hardware-validation">
+<section class="validation" aria-labelledby="hardware-validation">
 <div class="wrap">
 <div class="sectionhead">
 <div class="kicker">Transparency</div>
 <h2 id="hardware-validation">What still requires hardware validation</h2>
 </div>
-<p>The project does not claim a final trained model, validated production accuracy, or completed GPU training. These are the open items this phase is designed to answer with measurements:</p>
+<p class="section-intro">The project does not claim a final trained model, validated production accuracy, or completed GPU training. These are the open items this phase is designed to answer with measurements:</p>
 
-<div class="validation-list">
-<div class="validation-item">
-<strong>Real training runs</strong>
-<span>Actual training with the selected model weights on real GPU hardware.</span>
+<div class="validation-grid">
+<div class="validation-item"><strong>Real training runs</strong><span>Actual training with the selected model weights on real GPU hardware.</span></div>
+<div class="validation-item"><strong>VRAM requirements</strong><span>Measured memory use, including BF16/FP16 mixed-precision behavior.</span></div>
+<div class="validation-item"><strong>Throughput ceilings</strong><span>Measured speed and batch-size limits under real conditions.</span></div>
+<div class="validation-item"><strong>Checkpoint behavior</strong><span>Checkpoint sizes, save/load behavior and GPU OOM recovery.</span></div>
+<div class="validation-item"><strong>Multi-GPU scaling</strong><span>Only if multi-GPU hardware is later used.</span></div>
+<div class="validation-item"><strong>Measured quality gain</strong><span>Actual quality improvement after adaptation, evaluated on held-out data.</span></div>
 </div>
-<div class="validation-item">
-<strong>VRAM requirements</strong>
-<span>Measured memory use, including BF16/FP16 mixed-precision behavior.</span>
-</div>
-<div class="validation-item">
-<strong>Throughput ceilings</strong>
-<span>Measured speed and batch-size limits under real conditions.</span>
-</div>
-<div class="validation-item">
-<strong>Checkpoint behavior</strong>
-<span>Checkpoint sizes, save/load behavior and GPU OOM recovery.</span>
-</div>
-<div class="validation-item">
-<strong>Multi-GPU scaling</strong>
-<span>Only if multi-GPU hardware is later used.</span>
-</div>
-<div class="validation-item">
-<strong>Measured quality gain</strong>
-<span>Actual quality improvement after adaptation, evaluated on held-out data.</span>
-</div>
-</div>
-
-<p class="note"><b>Spending flexibility:</b> actual spending may shift between categories as hardware prices, measured bottlenecks, and project needs change, while remaining within the same current-phase technical purpose. Cash support and infrastructure support are tracked separately so the project does not overstate what one funding source covers.</p>
+<p class="allocation-note"><b>Spending flexibility:</b> actual spending may shift between categories as hardware prices, measured bottlenecks, and project needs change, while remaining within the same current-phase technical purpose. Cash support and infrastructure support are tracked separately so the project does not overstate what one funding source covers.</p>
 </div>
 </section>
 
