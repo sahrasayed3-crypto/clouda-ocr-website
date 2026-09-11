@@ -513,8 +513,9 @@ footer .footer-logo img{
 /* Precision pass: fundbox left column now holds all funding content
    (duplicated card block removed), so keep the grid balanced when the
    right column is empty. */
-@media(min-width:981px){.fundbox{grid-template-columns:1fr}}
-.fundbox > div:only-child{max-width:820px}
+/* (scoped: only the support page fundbox is single-column; Home keeps 2 cols) */
+@media(min-width:981px){.support-support .fundbox{grid-template-columns:1fr}}
+.fundbox > div:only-child{max-width:none}
 
 /* Mobile: resource-grid falls back to 1 column below 640px via existing rules */
 @media(max-width:640px){
@@ -539,13 +540,15 @@ footer .footer-logo img{
 .page-progress .timeline{gap:36px}
 
 /* ---------- TECHNOLOGY (small refinement only) ---------- */
-.page-technology h2{font-size:clamp(26px,2.2vw,34px);line-height:1.22}
+/* Technology: only the leaderboard heading, not every H2 */
+.page-technology .leaderboard-section .sectionhead h2{font-size:clamp(26px,2.2vw,34px);line-height:1.22}
 
 /* ---------- ABOUT (minimal polish) ---------- */
 .page-about .page-hero h1{font-size:clamp(36px,3.2vw,50px);line-height:1.15}
 
 /* ---------- HOME (funding section: reduce visual heaviness only) ---------- */
-.page-home .sectionhead h2{font-size:clamp(30px,2.8vw,44px);line-height:1.2}
+/* Home: only the funding section (has .funding class); other Home H2s untouched */
+.page-home .funding .sectionhead h2{font-size:clamp(30px,2.8vw,44px);line-height:1.2}
 
 /* ---------- 404 (footer flush on short pages) ---------- */
 .page-404{min-height:100vh;display:flex;flex-direction:column}
