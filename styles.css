@@ -487,3 +487,35 @@ footer .footer-logo img{
     max-width:185px !important;
   }
 }
+
+
+/* =========================================================
+   SUPPORT PAGE — status chips & stage labels
+   ========================================================= */
+.statuschip{
+  display:inline-block;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  border-radius:999px;
+  padding:4px 9px;
+  margin-bottom:10px;
+  border:1px solid var(--line);
+  color:var(--muted);
+  background:var(--bone);
+}
+.chip-current{border-color:#c8a878;color:#7a5a22;background:#f7efdf}
+.chip-conditional{border-color:#b9a0d6;color:#5d3f8f;background:#f1eaf9}
+.chip-separate{border-color:rgba(255,255,255,.35);color:#ffd9c9;background:rgba(255,255,255,.06)}
+.scale .chip-separate{border-color:rgba(255,255,255,.35)}
+.page-meta .stagechip{border-color:#c8a878;color:#7a5a22;background:#f7efdf}
+
+/* Mobile: resource-grid falls back to 1 column below 640px via existing rules */
+@media(max-width:640px){
+  .amount{font-size:46px}
+  .fundbox{padding:22px}
+  .statuschip{font-size:9px;padding:3px 8px}
+  .resource strong{font-size:20px}
+  .resource p{font-size:13px;overflow-wrap:break-word}
+  .page-hero h1{font-size:30px;line-height:1.14}
+}
