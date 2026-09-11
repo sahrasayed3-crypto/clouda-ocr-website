@@ -513,7 +513,8 @@ footer .footer-logo img{
 /* Precision pass: fundbox left column now holds all funding content
    (duplicated card block removed), so keep the grid balanced when the
    right column is empty. */
-.fundbox > div:only-child{max-width:720px}
+.fundbox{grid-template-columns:1fr}
+.fundbox > div:only-child{max-width:820px}
 
 /* Mobile: resource-grid falls back to 1 column below 640px via existing rules */
 @media(max-width:640px){
