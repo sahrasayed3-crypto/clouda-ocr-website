@@ -1121,3 +1121,198 @@ section:not(.scale):not(.funding):not(.progress):not(.final) + section.final{
   .validation-list{grid-template-columns:1fr;}
   .validation-item{border-right:none !important;}
 }
+
+
+/* ---------- SUPPORT PAGE FINAL REFINEMENT ---------- */
+
+/* Improved allocation list with full detail */
+.allocation-list{
+  margin-top:40px;
+  border-top:1px solid var(--line);
+}
+.allocation-item{
+  border-bottom:1px solid var(--line);
+  padding:28px 0;
+}
+.allocation-item:last-child{
+  border-bottom:1px solid var(--line);
+}
+.allocation-header-row{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  margin-bottom:12px;
+}
+.allocation-status{
+  font-size:11px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  color:var(--copper);
+  min-width:110px;
+}
+.allocation-item.conditional .allocation-status{
+  color:var(--muted);
+}
+.allocation-amount{
+  font-family:Georgia,serif;
+  font-size:32px;
+  font-weight:700;
+  color:var(--ink);
+}
+.allocation-body strong{
+  font-size:17px;
+  display:block;
+  margin-bottom:8px;
+  color:var(--ink);
+}
+.allocation-body p{
+  font-size:15px;
+  line-height:1.6;
+  color:var(--muted);
+  margin:0;
+  max-width:80ch;
+}
+.allocation-total{
+  margin-top:28px;
+  padding-top:20px;
+  border-top:2px solid var(--line);
+  font-size:15px;
+  color:var(--muted);
+}
+@media(max-width:768px){
+  .allocation-header-row{flex-direction:column;align-items:flex-start;gap:8px;}
+  .allocation-amount{font-size:28px;}
+  .allocation-body p{font-size:14px;}
+  .allocation-item{padding:24px 0;}
+}
+@media(max-width:520px){
+  .allocation-amount{font-size:26px;}
+  .allocation-body strong{font-size:16px;}
+}
+
+/* Improved foundation section with featured items */
+.foundation-grid{
+  margin-top:36px;
+}
+.foundation-major{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:32px;
+  padding-bottom:32px;
+  border-bottom:1px solid var(--line);
+}
+.foundation-secondary{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+  padding-top:32px;
+}
+.foundation-item{
+  padding:0;
+}
+.foundation-item.featured{
+  padding:24px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:12px;
+}
+.foundation-item strong{
+  font-size:17px;
+  display:block;
+  margin-bottom:10px;
+  color:var(--ink);
+}
+.foundation-item.featured strong{
+  font-size:18px;
+}
+.foundation-item p{
+  font-size:14.5px;
+  line-height:1.6;
+  color:var(--muted);
+  margin:0;
+}
+@media(max-width:980px){
+  .foundation-major{grid-template-columns:1fr;gap:24px;border-bottom:none;padding-bottom:0;}
+  .foundation-secondary{grid-template-columns:1fr;gap:20px;padding-top:24px;border-top:1px solid var(--line);}
+  .foundation-item.featured{padding:20px;}
+}
+
+/* Improved why local compute - vertical editorial list */
+.why-local-editorial{
+  margin-top:36px;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+.why-local-item{
+  padding:24px 0;
+  border-bottom:1px solid var(--line);
+}
+.why-local-item:last-child{
+  border-bottom:none;
+}
+.why-local-item strong{
+  font-size:17px;
+  display:block;
+  margin-bottom:8px;
+  color:var(--ink);
+}
+.why-local-item p{
+  font-size:15px;
+  line-height:1.6;
+  color:var(--muted);
+  margin:0;
+  max-width:70ch;
+}
+@media(max-width:640px){
+  .why-local-item{padding:20px 0;}
+  .why-local-item strong{font-size:16px;}
+  .why-local-item p{font-size:14px;}
+}
+
+/* Scope dark section button fix to Support page only */
+.support-support .scale .actions .btn.light{
+  background:transparent;
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.35);
+}
+.support-support .scale .actions .btn.light:hover{
+  background:rgba(255,255,255,0.1);
+  border-color:rgba(255,255,255,0.5);
+}
+
+/* Improved section spacing */
+.support-support section{
+  padding:72px 0;
+}
+.support-support .funding{
+  padding:60px 0 72px;
+}
+.support-support .final{
+  padding:80px 0;
+}
+@media(max-width:768px){
+  .support-support section{padding:56px 0;}
+  .support-support .funding{padding:48px 0 56px;}
+  .support-support .final{padding:64px 0;}
+}
+
+/* Improved typography balance */
+.support-support .sectionhead{
+  margin-bottom:36px;
+}
+.support-support .sectionhead h2{
+  font-size:clamp(24px,2vw,32px);
+  line-height:1.2;
+  margin-bottom:16px;
+}
+.support-support .sectionhead > p{
+  font-size:16px;
+  line-height:1.65;
+  max-width:75ch;
+}
+@media(max-width:640px){
+  .support-support .sectionhead h2{font-size:22px;}
+  .support-support .sectionhead > p{font-size:15px;}
+}
