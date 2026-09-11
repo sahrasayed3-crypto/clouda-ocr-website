@@ -702,25 +702,7 @@ footer .footer-logo img{
 }
 
 /* ---------- PROGRESS: Timeline visual refinement ---------- */
-/* Subtle visual separator between timeline steps */
-.page-progress .timeline{
-  position:relative;
-}
-.page-progress .timeline::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  height:2px;
-  background:linear-gradient(to right, transparent, var(--copper) 10%, var(--copper) 90%, transparent);
-  opacity:0.25;
-}
-@media (max-width: 980px){
-  .page-progress .timeline::before{
-    display:none;
-  }
-}
+/* Timeline already has border-top; no additional decoration needed */
 
 /* ---------- 404: Improved visual polish ---------- */
 /* Better vertical centering and breathing room */
@@ -768,96 +750,37 @@ section:not(.scale):not(.funding):not(.progress):not(.final) + section.final{
 }
 
 /* ---------- TABLET: Logo overflow fix ---------- */
-@media (max-width: 1024px) and (min-width: 641px){
-  /* Container constraints */
-  nav .navin{
-    max-width:calc(100vw - 48px) !important;
-  }
-  nav .brand-logo,
-  .brand-logo{
-    max-width:160px !important;
-    width:160px !important;
-    flex:0 0 160px !important;
-    overflow:hidden !important;
-  }
-  nav .brand-logo img,
-  .brand-logo img{
-    max-width:100% !important;
-    width:100% !important;
-    height:auto !important;
-    display:block !important;
-  }
-  footer .wrap{
-    max-width:calc(100vw - 48px) !important;
-  }
-  footer .footer-logo{
-    max-width:200px !important;
-    width:200px !important;
-    display:inline-flex !important;
-  }
-  footer .footer-logo img{
-    max-width:100% !important;
-    width:100% !important;
-    height:auto !important;
-    display:block !important;
-  }
-}
+/* Consolidated into GLOBAL RESPONSIVE SAFETY below */
 
 /* Support page tablet fix — overrides its wide wrap */
 @media (max-width: 1024px){
   .support-support .wrap{
-    width:calc(100% - 48px) !important;
-    max-width:calc(100vw - 48px) !important;
-    margin-left:auto !important;
-    margin-right:auto !important;
-    box-sizing:border-box !important;
+    width:calc(100% - 48px);
+    max-width:calc(100vw - 48px);
+    margin-left:auto;
+    margin-right:auto;
+    box-sizing:border-box;
   }
-  /* Ensure logo containers don't overflow */
   .support-support .navin{
-    max-width:calc(100vw - 48px) !important;
-    overflow:hidden !important;
+    max-width:calc(100vw - 48px);
+    overflow:hidden;
   }
-  /* Force logo image to fit */
-  .support-support .brand-logo{
-    max-width:120px !important;
-    width:120px !important;
-    flex:0 0 120px !important;
-    overflow:hidden !important;
-  }
-  .support-support .brand-logo img{
-    width:100% !important;
-    max-width:100% !important;
-    height:auto !important;
-    object-fit:contain !important;
-  }
-  /* Footer fix */
   .support-support footer .wrap{
-    max-width:calc(100vw - 48px) !important;
-  }
-  .support-support .footer-logo{
-    max-width:160px !important;
-    width:160px !important;
-    overflow:hidden !important;
-  }
-  .support-support .footer-logo img{
-    width:100% !important;
-    max-width:100% !important;
-    height:auto !important;
-    object-fit:contain !important;
+    max-width:calc(100vw - 48px);
   }
 }
 
-/* Mobile specific logo fix */
+/* Mobile: Support page specific */
 @media (max-width: 640px){
   .support-support .brand-logo,
   .support-support .brand-logo img{
-    max-width:110px !important;
-    width:110px !important;
+    max-width:110px;
+    width:110px;
   }
   .support-support .footer-logo,
   .support-support .footer-logo img{
-    max-width:140px !important;
-    width:140px !important;
+    max-width:140px;
+    width:140px;
   }
 }
 
@@ -874,39 +797,40 @@ section:not(.scale):not(.funding):not(.progress):not(.final) + section.final{
 
 /* =========================================================
    GLOBAL RESPONSIVE SAFETY — Prevent logo overflow
+   Single consolidated override for all pages
    ========================================================= */
 
 /* All pages: ensure logo never causes overflow */
 @media (max-width: 1180px){
   nav .navin{
-    max-width:calc(100vw - 32px) !important;
+    max-width:calc(100vw - 32px);
   }
   /* Override the hardcoded logo sizes from earlier in the file */
-  html body nav .navin a.brand-logo,
-  html body nav .navin a.brand-logo img{
-    max-width:120px !important;
-    width:120px !important;
+  nav .brand-logo,
+  nav .brand-logo img{
+    max-width:120px;
+    width:120px;
   }
   footer .wrap{
-    max-width:calc(100vw - 32px) !important;
+    max-width:calc(100vw - 32px);
   }
-  html body footer .wrap a.footer-logo,
-  html body footer .wrap a.footer-logo img{
-    max-width:180px !important;
-    width:180px !important;
+  footer .footer-logo,
+  footer .footer-logo img{
+    max-width:180px;
+    width:180px;
   }
 }
 
-/* Mobile: even smaller logos */
+/* Mobile: smaller logos */
 @media (max-width: 640px){
-  html body nav .navin a.brand-logo,
-  html body nav .navin a.brand-logo img{
-    max-width:110px !important;
-    width:110px !important;
+  nav .brand-logo,
+  nav .brand-logo img{
+    max-width:110px;
+    width:110px;
   }
-  html body footer .wrap a.footer-logo,
-  html body footer .wrap a.footer-logo img{
-    max-width:150px !important;
-    width:150px !important;
+  footer .footer-logo,
+  footer .footer-logo img{
+    max-width:150px;
+    width:150px;
   }
 }
