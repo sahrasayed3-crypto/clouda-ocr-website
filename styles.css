@@ -834,3 +834,290 @@ section:not(.scale):not(.funding):not(.progress):not(.final) + section.final{
     width:150px;
   }
 }
+
+
+/* ---------- SUPPORT PAGE REDESIGN — De-boxing & Visual Hierarchy ---------- */
+/* Replaces repetitive card grids with editorial layouts */
+
+/* Fix: Dark section buttons visibility */
+.scale .actions .btn.light{
+  background:transparent;
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.35);
+}
+.scale .actions .btn.light:hover{
+  background:rgba(255,255,255,0.1);
+  border-color:rgba(255,255,255,0.5);
+}
+
+/* Evidence list (replaces bottleneck 4-card grid) */
+.evidence-list{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  border-top:1px solid var(--line);
+  margin-top:32px;
+}
+.evidence-item{
+  padding:24px 20px;
+  border-right:1px solid var(--line);
+}
+.evidence-item:last-child{
+  border-right:none;
+}
+.evidence-item strong{
+  display:block;
+  font-size:17px;
+  margin-bottom:8px;
+  color:var(--ink);
+}
+.evidence-item span{
+  font-size:14px;
+  line-height:1.55;
+  color:var(--muted);
+}
+@media(max-width:980px){
+  .evidence-list{grid-template-columns:1fr 1fr;border-top:none;gap:0;border-left:1px solid var(--line);}
+  .evidence-item{border-right:none;border-bottom:1px solid var(--line);border-left:1px solid var(--line);margin-left:-1px;}
+  .evidence-item:nth-child(odd){border-left:none;margin-left:0;}
+}
+@media(max-width:640px){
+  .evidence-list{grid-template-columns:1fr;border-left:none;}
+  .evidence-item{border-left:none !important;margin-left:0 !important;border-right:none;border-bottom:1px solid var(--line);padding:20px 0;}
+}
+
+/* Foundation section — 2-tier layout (replaces 6-card grid) */
+.foundation-grid{
+  display:grid;
+  gap:32px;
+  margin-top:32px;
+}
+.foundation-major{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.foundation-minor{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+}
+.foundation-item{
+  padding:0;
+}
+.foundation-item strong{
+  font-size:17px;
+  display:block;
+  margin-bottom:6px;
+}
+.foundation-item p{
+  font-size:14px;
+  line-height:1.55;
+  color:var(--muted);
+  margin:0;
+}
+@media(max-width:980px){
+  .foundation-major{grid-template-columns:1fr;gap:20px;}
+  .foundation-minor{grid-template-columns:1fr;gap:16px;padding-top:20px;border-top:none;border-left:2px solid var(--line);padding-left:20px;margin-top:8px;}
+  .foundation-minor .foundation-item{padding-left:0;}
+}
+
+/* Why local compute — 2-column editorial (replaces 5-card grid) */
+.why-local-split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+  margin-top:32px;
+}
+.why-local-col{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+.why-local-item{
+  padding:16px 0;
+  border-bottom:1px solid var(--line);
+}
+.why-local-item:last-child{
+  border-bottom:none;
+}
+.why-local-item strong{
+  font-size:16px;
+  display:block;
+  margin-bottom:6px;
+}
+.why-local-item p{
+  font-size:14px;
+  line-height:1.55;
+  color:var(--muted);
+  margin:0;
+}
+@media(max-width:980px){
+  .why-local-split{grid-template-columns:1fr;gap:0;}
+  .why-local-col:first-child{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:16px;}
+}
+
+/* Allocation table (replaces 8-card grid) */
+.allocation-table{
+  margin-top:32px;
+  border-top:1px solid var(--line);
+}
+.allocation-header,
+.allocation-row{
+  display:grid;
+  grid-template-columns:140px 100px 1fr;
+  gap:16px;
+  padding:18px 0;
+  border-bottom:1px solid var(--line);
+  align-items:baseline;
+}
+.allocation-header{
+  font-weight:700;
+  background:var(--paper);
+}
+.allocation-status{
+  font-size:11px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  color:var(--copper);
+}
+.allocation-row.conditional .allocation-status{
+  color:var(--muted);
+}
+.allocation-amount{
+  font-family:Georgia,serif;
+  font-size:20px;
+  font-weight:700;
+}
+.allocation-desc{
+  font-size:14px;
+  line-height:1.5;
+  color:var(--ink);
+}
+.allocation-desc b{
+  font-weight:700;
+}
+.allocation-note{
+  margin-top:20px;
+  font-size:14px;
+  color:var(--muted);
+}
+@media(max-width:768px){
+  .allocation-header,.allocation-row{grid-template-columns:100px 80px 1fr;gap:12px;}
+  .allocation-amount{font-size:18px;}
+  .allocation-desc{font-size:13px;}
+}
+@media(max-width:520px){
+  .allocation-header,.allocation-row{grid-template-columns:1fr;gap:4px;padding:16px 0;}
+  .allocation-status{margin-bottom:4px;}
+  .allocation-amount{font-size:22px;margin-bottom:4px;}
+}
+
+/* Partial support — compact 3-column (replaces 3-card grid) */
+.partial-support{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:32px;
+  margin-top:32px;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+}
+.partial-item{
+  padding:0;
+}
+.partial-item strong{
+  font-size:16px;
+  display:block;
+  margin-bottom:6px;
+}
+.partial-item span{
+  font-size:14px;
+  line-height:1.55;
+  color:var(--muted);
+}
+@media(max-width:768px){
+  .partial-support{grid-template-columns:1fr;gap:20px;}
+  .partial-item{padding:16px 0;border-bottom:1px solid var(--line);}
+  .partial-item:last-child{border-bottom:none;}
+}
+
+/* Infrastructure cards — cleaner with chip above title */
+.infrastructure-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  margin-top:32px;
+}
+.infrastructure-card{
+  background:#171c19;
+  border:1px solid #2d332f;
+  border-radius:12px;
+  padding:22px;
+}
+.infrastructure-type{
+  display:block;
+  font-size:10px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  color:#ff8458;
+  margin-bottom:10px;
+}
+.infrastructure-card strong{
+  font-size:17px;
+  display:block;
+  margin-bottom:8px;
+  color:#fff;
+}
+.infrastructure-card p{
+  font-size:13px;
+  line-height:1.5;
+  color:#bcc1bd;
+  margin:0;
+}
+.infrastructure-actions{
+  margin-top:28px;
+}
+@media(max-width:980px){
+  .infrastructure-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:640px){
+  .infrastructure-grid{grid-template-columns:1fr;}
+}
+
+/* Validation list (replaces 6-card grid) */
+.validation-list{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+  border-top:1px solid var(--line);
+  margin-top:32px;
+}
+.validation-item{
+  padding:20px 18px;
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.validation-item:nth-child(3n){border-right:none;}
+.validation-item strong{
+  font-size:15px;
+  display:block;
+  margin-bottom:6px;
+}
+.validation-item span{
+  font-size:13px;
+  line-height:1.5;
+  color:var(--muted);
+}
+@media(max-width:768px){
+  .validation-list{grid-template-columns:1fr 1fr;}
+  .validation-item:nth-child(3n){border-right:1px solid var(--line);}
+  .validation-item:nth-child(2n){border-right:none;}
+}
+@media(max-width:520px){
+  .validation-list{grid-template-columns:1fr;}
+  .validation-item{border-right:none !important;}
+}
