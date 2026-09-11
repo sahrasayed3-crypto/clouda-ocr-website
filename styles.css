@@ -654,3 +654,183 @@ footer .footer-logo img{
 .support-support .final{padding:72px 0}
 .support-support .final h2{font-size:clamp(25px,2.1vw,32px);line-height:1.25}
 .support-support .final .wrap{max-width:1000px;margin-right:auto}
+
+
+/* =========================================================
+   KIMI K2.5 FULL VISUAL REFINEMENT — September 2026
+   Targeted polish based on page-by-page visual review
+   ========================================================= */
+
+/* ---------- TECHNOLOGY: Mobile table scroll affordance ---------- */
+/* Visual hint for horizontally-scrollable tables on mobile */
+.page-technology .table-wrap{
+  position:relative;
+}
+.page-technology .table-wrap::after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  width:40px;
+  background:linear-gradient(to right, transparent, rgba(255,253,248,0.95));
+  pointer-events:none;
+  opacity:0;
+  transition:opacity 0.3s ease;
+}
+@media (max-width: 780px){
+  .page-technology .table-wrap::after{
+    opacity:1;
+  }
+  /* Add swipe hint */
+  .page-technology .table-wrap::before{
+    content:'Swipe horizontally to view all columns →';
+    position:absolute;
+    bottom:8px;
+    right:8px;
+    background:rgba(17,21,19,0.75);
+    color:#fff;
+    font-size:10px;
+    font-weight:700;
+    padding:6px 10px;
+    border-radius:6px;
+    pointer-events:none;
+    white-space:nowrap;
+    z-index:10;
+    opacity:0.9;
+  }
+}
+
+/* ---------- PROGRESS: Timeline visual refinement ---------- */
+/* Timeline already has border-top; no additional decoration needed */
+
+/* ---------- 404: Improved visual polish ---------- */
+/* Better vertical centering and breathing room */
+.page-404 .page-hero{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:50vh;
+  text-align:center;
+}
+.page-404 .page-hero h1{
+  font-size:clamp(48px,8vw,72px);
+}
+.page-404 .page-hero p{
+  max-width:480px;
+}
+
+/* ---------- GLOBAL: Section transitions ---------- */
+/* Smoother visual separation between sections */
+section + section{
+  position:relative;
+}
+/* Subtle top border on light sections following dark sections */
+section:not(.scale):not(.funding):not(.progress):not(.final) + section.scale,
+section:not(.scale):not(.funding):not(.progress):not(.final) + section.final{
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+
+/* ---------- MOBILE: General refinements ---------- */
+@media (max-width: 640px){
+  /* Slightly more breathing room on cards */
+  .card, .resource, .stat{
+    padding:22px 20px;
+  }
+  /* Better button spacing in stacked layouts */
+  .actions{
+    gap:12px;
+  }
+  /* Improved readability for micro text */
+  .micro, .source{
+    font-size:11px;
+    line-height:1.5;
+  }
+}
+
+/* ---------- TABLET: Logo overflow fix ---------- */
+/* Consolidated into GLOBAL RESPONSIVE SAFETY below */
+
+/* Support page tablet fix — overrides its wide wrap */
+@media (max-width: 1024px){
+  .support-support .wrap{
+    width:calc(100% - 48px);
+    max-width:calc(100vw - 48px);
+    margin-left:auto;
+    margin-right:auto;
+    box-sizing:border-box;
+  }
+  .support-support .navin{
+    max-width:calc(100vw - 48px);
+    overflow:hidden;
+  }
+  .support-support footer .wrap{
+    max-width:calc(100vw - 48px);
+  }
+}
+
+/* Mobile: Support page specific */
+@media (max-width: 640px){
+  .support-support .brand-logo,
+  .support-support .brand-logo img{
+    max-width:110px;
+    width:110px;
+  }
+  .support-support .footer-logo,
+  .support-support .footer-logo img{
+    max-width:140px;
+    width:140px;
+  }
+}
+
+/* ---------- TABLET: Section spacing refinement ---------- */
+@media (min-width: 641px) and (max-width: 980px){
+  section{
+    padding:72px 0;
+  }
+  .page-hero{
+    padding:64px 0 48px;
+  }
+}
+
+
+/* =========================================================
+   GLOBAL RESPONSIVE SAFETY — Prevent logo overflow
+   Single consolidated override for all pages
+   ========================================================= */
+
+/* All pages: ensure logo never causes overflow */
+@media (max-width: 1180px){
+  nav .navin{
+    max-width:calc(100vw - 32px);
+  }
+  /* Override the hardcoded logo sizes from earlier in the file */
+  nav .brand-logo,
+  nav .brand-logo img{
+    max-width:120px;
+    width:120px;
+  }
+  footer .wrap{
+    max-width:calc(100vw - 32px);
+  }
+  footer .footer-logo,
+  footer .footer-logo img{
+    max-width:180px;
+    width:180px;
+  }
+}
+
+/* Mobile: smaller logos */
+@media (max-width: 640px){
+  nav .brand-logo,
+  nav .brand-logo img{
+    max-width:110px;
+    width:110px;
+  }
+  footer .footer-logo,
+  footer .footer-logo img{
+    max-width:150px;
+    width:150px;
+  }
+}
