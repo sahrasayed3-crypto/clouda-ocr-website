@@ -654,3 +654,259 @@ footer .footer-logo img{
 .support-support .final{padding:72px 0}
 .support-support .final h2{font-size:clamp(25px,2.1vw,32px);line-height:1.25}
 .support-support .final .wrap{max-width:1000px;margin-right:auto}
+
+
+/* =========================================================
+   KIMI K2.5 FULL VISUAL REFINEMENT — September 2026
+   Targeted polish based on page-by-page visual review
+   ========================================================= */
+
+/* ---------- TECHNOLOGY: Mobile table scroll affordance ---------- */
+/* Visual hint for horizontally-scrollable tables on mobile */
+.page-technology .table-wrap{
+  position:relative;
+}
+.page-technology .table-wrap::after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  width:40px;
+  background:linear-gradient(to right, transparent, rgba(255,253,248,0.95));
+  pointer-events:none;
+  opacity:0;
+  transition:opacity 0.3s ease;
+}
+@media (max-width: 780px){
+  .page-technology .table-wrap::after{
+    opacity:1;
+  }
+  /* Add swipe hint */
+  .page-technology .table-wrap::before{
+    content:'Swipe horizontally to view all columns →';
+    position:absolute;
+    bottom:8px;
+    right:8px;
+    background:rgba(17,21,19,0.75);
+    color:#fff;
+    font-size:10px;
+    font-weight:700;
+    padding:6px 10px;
+    border-radius:6px;
+    pointer-events:none;
+    white-space:nowrap;
+    z-index:10;
+    opacity:0.9;
+  }
+}
+
+/* ---------- PROGRESS: Timeline visual refinement ---------- */
+/* Subtle visual separator between timeline steps */
+.page-progress .timeline{
+  position:relative;
+}
+.page-progress .timeline::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:2px;
+  background:linear-gradient(to right, transparent, var(--copper) 10%, var(--copper) 90%, transparent);
+  opacity:0.25;
+}
+@media (max-width: 980px){
+  .page-progress .timeline::before{
+    display:none;
+  }
+}
+
+/* ---------- 404: Improved visual polish ---------- */
+/* Better vertical centering and breathing room */
+.page-404 .page-hero{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:50vh;
+  text-align:center;
+}
+.page-404 .page-hero h1{
+  font-size:clamp(48px,8vw,72px);
+}
+.page-404 .page-hero p{
+  max-width:480px;
+}
+
+/* ---------- GLOBAL: Section transitions ---------- */
+/* Smoother visual separation between sections */
+section + section{
+  position:relative;
+}
+/* Subtle top border on light sections following dark sections */
+section:not(.scale):not(.funding):not(.progress):not(.final) + section.scale,
+section:not(.scale):not(.funding):not(.progress):not(.final) + section.final{
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+
+/* ---------- MOBILE: General refinements ---------- */
+@media (max-width: 640px){
+  /* Slightly more breathing room on cards */
+  .card, .resource, .stat{
+    padding:22px 20px;
+  }
+  /* Better button spacing in stacked layouts */
+  .actions{
+    gap:12px;
+  }
+  /* Improved readability for micro text */
+  .micro, .source{
+    font-size:11px;
+    line-height:1.5;
+  }
+}
+
+/* ---------- TABLET: Logo overflow fix ---------- */
+@media (max-width: 1024px) and (min-width: 641px){
+  /* Container constraints */
+  nav .navin{
+    max-width:calc(100vw - 48px) !important;
+  }
+  nav .brand-logo,
+  .brand-logo{
+    max-width:160px !important;
+    width:160px !important;
+    flex:0 0 160px !important;
+    overflow:hidden !important;
+  }
+  nav .brand-logo img,
+  .brand-logo img{
+    max-width:100% !important;
+    width:100% !important;
+    height:auto !important;
+    display:block !important;
+  }
+  footer .wrap{
+    max-width:calc(100vw - 48px) !important;
+  }
+  footer .footer-logo{
+    max-width:200px !important;
+    width:200px !important;
+    display:inline-flex !important;
+  }
+  footer .footer-logo img{
+    max-width:100% !important;
+    width:100% !important;
+    height:auto !important;
+    display:block !important;
+  }
+}
+
+/* Support page tablet fix — overrides its wide wrap */
+@media (max-width: 1024px){
+  .support-support .wrap{
+    width:calc(100% - 48px) !important;
+    max-width:calc(100vw - 48px) !important;
+    margin-left:auto !important;
+    margin-right:auto !important;
+    box-sizing:border-box !important;
+  }
+  /* Ensure logo containers don't overflow */
+  .support-support .navin{
+    max-width:calc(100vw - 48px) !important;
+    overflow:hidden !important;
+  }
+  /* Force logo image to fit */
+  .support-support .brand-logo{
+    max-width:120px !important;
+    width:120px !important;
+    flex:0 0 120px !important;
+    overflow:hidden !important;
+  }
+  .support-support .brand-logo img{
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    object-fit:contain !important;
+  }
+  /* Footer fix */
+  .support-support footer .wrap{
+    max-width:calc(100vw - 48px) !important;
+  }
+  .support-support .footer-logo{
+    max-width:160px !important;
+    width:160px !important;
+    overflow:hidden !important;
+  }
+  .support-support .footer-logo img{
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    object-fit:contain !important;
+  }
+}
+
+/* Mobile specific logo fix */
+@media (max-width: 640px){
+  .support-support .brand-logo,
+  .support-support .brand-logo img{
+    max-width:110px !important;
+    width:110px !important;
+  }
+  .support-support .footer-logo,
+  .support-support .footer-logo img{
+    max-width:140px !important;
+    width:140px !important;
+  }
+}
+
+/* ---------- TABLET: Section spacing refinement ---------- */
+@media (min-width: 641px) and (max-width: 980px){
+  section{
+    padding:72px 0;
+  }
+  .page-hero{
+    padding:64px 0 48px;
+  }
+}
+
+
+/* =========================================================
+   GLOBAL RESPONSIVE SAFETY — Prevent logo overflow
+   ========================================================= */
+
+/* All pages: ensure logo never causes overflow */
+@media (max-width: 1180px){
+  nav .navin{
+    max-width:calc(100vw - 32px) !important;
+  }
+  /* Override the hardcoded logo sizes from earlier in the file */
+  html body nav .navin a.brand-logo,
+  html body nav .navin a.brand-logo img{
+    max-width:120px !important;
+    width:120px !important;
+  }
+  footer .wrap{
+    max-width:calc(100vw - 32px) !important;
+  }
+  html body footer .wrap a.footer-logo,
+  html body footer .wrap a.footer-logo img{
+    max-width:180px !important;
+    width:180px !important;
+  }
+}
+
+/* Mobile: even smaller logos */
+@media (max-width: 640px){
+  html body nav .navin a.brand-logo,
+  html body nav .navin a.brand-logo img{
+    max-width:110px !important;
+    width:110px !important;
+  }
+  html body footer .wrap a.footer-logo,
+  html body footer .wrap a.footer-logo img{
+    max-width:150px !important;
+    width:150px !important;
+  }
+}
