@@ -510,6 +510,11 @@ footer .footer-logo img{
 .scale .chip-separate{border-color:rgba(255,255,255,.35)}
 .page-meta .stagechip{border-color:#c8a878;color:#7a5a22;background:#f7efdf}
 
+/* Precision pass: fundbox left column now holds all funding content
+   (duplicated card block removed), so keep the grid balanced when the
+   right column is empty. */
+.fundbox > div:only-child{max-width:720px}
+
 /* Mobile: resource-grid falls back to 1 column below 640px via existing rules */
 @media(max-width:640px){
   .amount{font-size:46px}
