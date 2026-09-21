@@ -1,0 +1,45 @@
+{
+  "project_phase": "Benchmarking & data preparation",
+  "software_release": {
+    "status": "Released",
+    "name": "Clouda OCR",
+    "version": "v0.2.0",
+    "license": "Apache-2.0",
+    "historical_note": "v0.2.0 was originally published under the release title 'Clouda PDF'",
+    "github_release_url": "https://github.com/sahrasayed3-crypto/clouda-ocr/releases/tag/v0.2.0",
+    "zenodo_record_url": "https://zenodo.org/records/22880981",
+    "doi": "10.5281/zenodo.22880981",
+    "concept_doi": "10.5281/zenodo.22880980"
+  },
+  "published_benchmark": {
+    "version": "v0.1.0",
+    "name": "Clouda OCR Arabic OCR Benchmark",
+    "pages": 177,
+    "models_full_coverage": 6,
+    "released": "September 7, 2026",
+    "doi": "10.5281/zenodo.22859930",
+    "doi_url": "https://doi.org/10.5281/zenodo.22859930",
+    "repository_url": "https://github.com/sahrasayed3-crypto/clouda-ocr-benchmark",
+    "release_url": "https://github.com/sahrasayed3-crypto/clouda-ocr-benchmark/releases/tag/v0.1.0"
+  },
+  "current_benchmark": {
+    "pages": 462,
+    "models": 10,
+    "manifest": "Frozen manifest",
+    "status_short": "In progress · currently paused pending additional compute capacity",
+    "results_status": "Not published yet",
+    "status_statement": "An evaluation on 462 held-out Arabic pages across multiple OCR/VLM candidates is in progress and currently paused pending additional compute capacity. Results will be published only after the evaluation is complete."
+  },
+  "hosted_product": {
+    "status": "Not released"
+  },
+  "final_ocr_model": {
+    "status": "Not released"
+  },
+  "funding_target_usd": 15000,
+  "funding_target_display": "$15,000",
+  "links": {
+    "github_project": "https://github.com/sahrasayed3-crypto/clouda-ocr",
+    "contact_email": "contact@cloudaocr.xyz"
+  }
+}

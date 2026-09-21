@@ -9,6 +9,7 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bone);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--copper);outline-offset:2px;border-radius:4px}
 img{max-width:100%;display:block}
 .wrap{width:min(calc(100% - 48px),var(--wrap));margin:auto}
 nav{position:sticky;top:0;z-index:1000;background:rgba(243,238,228,.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(217,210,196,.8)}
@@ -32,7 +33,7 @@ h2{font-size:clamp(38px,4vw,58px);line-height:1.08}
 h3{font-size:24px;line-height:1.16}
 .lead{font-size:18px;line-height:1.7;color:#53564f;max-width:670px;margin:22px 0 0}
 .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:12px 17px;border-radius:8px;border:1px solid var(--ink);font-size:13px;font-weight:800;line-height:1.2;transition:.18s ease}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:12px 17px;border-radius:8px;border:1px solid var(--ink);font-size:13px;font-weight:800;line-height:1.2;transition:.18s ease;overflow-wrap:anywhere}
 .btn:hover{transform:translateY(-1px)}
 .btn.primary{background:var(--copper);color:#fff;border-color:var(--copper)}
 .btn.primary:hover{background:var(--copper-dark)}
@@ -47,7 +48,8 @@ h3{font-size:24px;line-height:1.16}
 .sheet .arabic{font-family:Tahoma,Arial,sans-serif;direction:rtl;text-align:right;font-size:18px;line-height:1.85;margin-top:50px}
 .rule{height:2px;background:#d7d0c2;margin:17px 0}.rule.short{width:58%}.rule.orange{background:var(--copper);width:48%;height:3px}.corner{position:absolute;bottom:18px;left:22px;font-size:9px;letter-spacing:.12em;color:#85857f;text-transform:uppercase}
 .proof{background:var(--dark);color:#fff;padding:54px 0}.proofgrid{display:grid;grid-template-columns:210px 1fr;gap:58px;align-items:center}.bigstat{font-family:Georgia,serif;font-size:82px;color:#ff9a74;line-height:1}.proof h2{font-size:34px}.proof p{color:#c9ccc8;margin:10px 0 0;max-width:720px}.source{margin-top:14px;color:#91978f;font-size:11px}.source a{color:#fff;text-decoration:underline}
-section{padding:88px 0}.sectionhead{display:grid;grid-template-columns:1.04fr .96fr;gap:58px;align-items:end;margin:10px 0 36px}.sectionhead p{color:var(--muted);margin:0;max-width:620px}
+section{padding:88px 0}
+[id]{scroll-margin-top:84px}.sectionhead{display:grid;grid-template-columns:1.04fr .96fr;gap:58px;align-items:end;margin:10px 0 36px}.sectionhead p{color:var(--muted);margin:0;max-width:620px}
 .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card,.stat,.resource,.list-card,.benchmark-box,.contact-card{background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow2)}.card{padding:28px}.card .num{font-size:11px;font-weight:900;color:var(--copper);letter-spacing:.1em;margin-bottom:36px}.card p{color:var(--muted);margin:12px 0 0}
 .progress{background:#ece4d7}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:32px 0}.stat{padding:24px}.stat strong{font-family:Georgia,serif;font-size:36px;display:block;line-height:1.05}.stat small{display:block;color:var(--muted);margin-top:8px;line-height:1.45}
 .bench-top{display:grid;grid-template-columns:.85fr 1.15fr;gap:18px;margin-top:30px}.benchmark-box{padding:30px}.benchmark-box.dark{background:var(--dark);color:#fff;border-color:#2a2f2b}.benchmark-box.dark p{color:#bec4bf}.rank-list{margin-top:16px}.rank-row{display:grid;grid-template-columns:50px 1fr 140px;gap:16px;padding:13px 0;border-top:1px solid var(--line);align-items:center}.dark .rank-row{border-color:#303631}.rank-row:first-child{border-top:0}.rank{font-family:Georgia,serif;font-size:24px;color:var(--copper)}.score{font-variant-numeric:tabular-nums;font-weight:900;text-align:right}.muted{color:var(--muted)}
@@ -486,4 +488,150 @@ footer .footer-logo img{
     width:185px !important;
     max-width:185px !important;
   }
+}
+
+
+/* =========================================================
+   STATUS SYSTEM — phase chip, status badges, status cards,
+   evidence cards, timeline groups. Same black/white/cream
+   identity; restrained additions only.
+   ========================================================= */
+
+/* Hero subtitle under the Clouda OCR title */
+.subtitle{
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:clamp(20px,2.2vw,26px);
+  font-weight:700;
+  letter-spacing:-.015em;
+  color:var(--ink);
+  margin:12px 0 0;
+}
+
+/* Current-phase indicator */
+.phase-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  border:1px solid var(--line);
+  background:var(--paper);
+  border-radius:999px;
+  padding:9px 15px;
+  font-size:12px;
+  font-weight:800;
+  color:#53564f;
+  margin-top:20px;
+}
+.phase-chip i{width:7px;height:7px;background:var(--copper);border-radius:50%;flex:0 0 auto}
+
+/* Status badges used across pages */
+.badge{
+  display:inline-block;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  border-radius:999px;
+  padding:6px 11px;
+  border:1px solid var(--line);
+  background:var(--bone);
+  color:#5c5e57;
+  vertical-align:middle;
+}
+.badge.copper{background:var(--copper);border-color:var(--copper);color:#fff}
+.badge.green{background:var(--green);border-color:var(--green);color:#fff}
+.badge.dark{background:var(--ink);border-color:var(--ink);color:#fff}
+.badge.outline-dark{background:transparent;border-color:rgba(255,255,255,.5);color:#fff}
+
+/* Current project status cards (Home) */
+.status-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}
+.status-card{background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow2);padding:22px;display:flex;flex-direction:column;gap:12px}
+.status-card .kick{font-size:10px;text-transform:uppercase;letter-spacing:.13em;font-weight:900;color:var(--copper)}
+.status-card strong{font-family:Georgia,serif;font-size:21px;line-height:1.2;display:block}
+.status-card .badge{align-self:flex-start}
+.status-card .releaselink{font-size:12px;font-weight:800;color:var(--copper);text-decoration:underline;text-underline-offset:3px;margin:-4px 0 0}
+.status-card .releaselink:hover{color:var(--copper-dark)}
+.status-card .releaselink:focus-visible{outline:2px solid var(--copper);outline-offset:2px;border-radius:4px}
+
+/* Evidence layers / reproducibility grid (Home) */
+.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}
+.mini-card{background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow2);padding:22px}
+.mini-card b{display:block;font-family:Georgia,serif;font-size:18px;margin-bottom:7px}
+.mini-card span{color:var(--muted);font-size:13px;display:block}
+.mini-card .stagelabel{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:900;color:var(--muted);margin-bottom:9px}
+
+/* Results-not-published banner (Benchmark / Home) */
+.results-banner{border:1px dashed var(--copper);border-radius:12px;background:#f9f3e9;padding:18px 22px;color:#5c5e57;font-size:14px}
+.results-banner strong{color:var(--ink)}
+
+/* Progress timeline groups */
+.group-stack{display:grid;gap:14px;margin-top:8px}
+.group-card{background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow2);padding:26px 28px}
+.group-card .grouphead{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.group-card h3{margin:0}
+.group-card ul{margin:14px 0 0;padding-left:20px;color:var(--muted)}
+.group-card li{margin:8px 0}
+.group-card li b{color:var(--ink)}
+
+/* Benchmark meta chips row */
+.meta-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.meta-chips span{font-size:11px;font-weight:800;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:7px 11px;color:#fff}
+.meta-chips.light span{border-color:var(--line);background:var(--paper);color:#53564f}
+
+/* Prose notes under tables */
+.metric-note{color:var(--muted);font-size:13px;margin-top:14px;max-width:820px}
+
+/* Small secondary DOI line under the evidence action row */
+.doi-line{color:var(--muted);font-size:12px;margin:2px 0 0;font-variant-numeric:tabular-nums}
+
+/* What-works pipeline (Home) */
+.pipeline{background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow2);padding:24px;margin-top:22px;max-width:780px}
+.pipe-node{display:inline-block;border:1px solid var(--ink);border-radius:8px;padding:9px 14px;font-size:13px;font-weight:800;background:var(--bone)}
+.pipe-arrow{text-align:center;color:var(--copper);font-weight:900;margin:6px 0;font-size:14px;line-height:1}
+.pipe-branch{margin-top:12px;display:grid;gap:10px}
+.pipe-branch-item{font-size:14px;color:#53564f;line-height:1.55;border-left:3px solid var(--copper);padding:10px 14px;background:var(--bone);border-radius:0 8px 8px 0}
+.pipe-branch-item em{font-style:normal;font-size:11px;font-weight:900;color:var(--green);text-transform:uppercase;letter-spacing:.07em}
+.pipe-branch-item code{font-size:12px;background:var(--paper);border:1px solid var(--line);border-radius:5px;padding:2px 6px}
+.nextmilestone{border:1px solid var(--green);background:#edf3ee;border-radius:12px;padding:16px 20px;font-size:14px;color:var(--green2);margin-top:18px;max-width:780px}
+.nextmilestone b{font-family:Georgia,serif;font-size:15px}
+.quietline{color:var(--muted);font-size:13px;margin:12px 0 0}
+
+/* Technical files disclosure (benchmark evidence actions) */
+.techfiles{background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow2);margin-top:14px;max-width:520px}
+.techfiles summary{cursor:pointer;padding:14px 18px;font-size:11px;font-weight:900;letter-spacing:.09em;text-transform:uppercase;color:#53564f;list-style:none;display:flex;align-items:center;gap:10px;border-radius:12px}
+.techfiles summary::-webkit-details-marker{display:none}
+.techfiles summary::before{content:"+";color:var(--copper);font-weight:900;font-size:16px;width:13px;flex:0 0 auto;line-height:1}
+.techfiles[open] summary::before{content:"–"}
+.techfiles summary:hover,.techfiles[open] summary{color:var(--copper)}
+.techfiles ul{list-style:none;margin:0;padding:2px 20px 16px 41px}
+.techfiles li{margin:9px 0}
+.techfiles a{font-size:13px;font-weight:700;color:var(--ink);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.techfiles a:hover{color:var(--copper);text-decoration-color:var(--copper)}
+.techfiles a:focus-visible{outline:2px solid var(--copper);outline-offset:2px;border-radius:4px}
+
+@media (max-width:980px){
+  .status-grid{grid-template-columns:1fr 1fr}
+  .mini-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  .status-grid,.mini-grid{grid-template-columns:1fr}
+  .phase-chip{margin-top:16px}
+}
+
+/* About accordion — unified "People also ask" style container */
+.about-faq{background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow2);overflow:hidden}
+.about-faq .about-accordion{border-top:1px solid #d3cab8}
+.about-faq .about-accordion:first-child{border-top:0}
+.about-accordion summary{display:flex;align-items:center;gap:14px;min-height:68px;padding:16px 28px;cursor:pointer;list-style:none;font-weight:900;font-size:18px;color:var(--ink);transition:background .15s ease;-webkit-tap-highlight-color:transparent}
+.about-accordion summary::-webkit-details-marker{display:none}
+.about-accordion summary::marker{content:""}
+.about-accordion summary:hover{background:#f6f1e7}
+.about-accordion summary:focus-visible{outline:2px solid var(--copper);outline-offset:-2px}
+.about-accordion .accordion-q{flex:1;min-width:0;overflow-wrap:anywhere}
+.about-accordion .accordion-icon{flex:none;width:20px;height:20px;color:var(--green);stroke-width:3;transform:rotate(0deg);transition:transform .18s ease}
+.about-accordion[open] summary .accordion-icon{transform:rotate(180deg)}
+.about-accordion .accordion-answer{padding:18px 28px 26px;border-top:1px solid #ece5d6}
+.about-accordion .accordion-answer>:last-child{margin-bottom:0}
+@media (max-width:640px){
+  .about-accordion summary{min-height:62px;padding:14px 16px;font-size:16px}
+  .about-accordion .accordion-answer{padding:14px 16px 20px}
 }

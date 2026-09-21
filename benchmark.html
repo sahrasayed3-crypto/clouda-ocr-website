@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Benchmark — Clouda OCR</title>
+<meta name="description" content="Clouda OCR benchmark evidence: published v0.1.0 results (177 distorted Arabic pages, 6 full-coverage models) and the current 462-page, 10-model evaluation.">
+<meta property="og:title" content="Benchmark — Clouda OCR">
+<meta property="og:description" content="Clouda OCR benchmark evidence: published v0.1.0 results (177 distorted Arabic pages, 6 full-coverage models) and the current 462-page, 10-model evaluation.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Clouda OCR">
+<link rel="canonical" href="https://cloudaocr.xyz/benchmark.html">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<meta property="og:image" content="https://cloudaocr.xyz/assets/social-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cloudaocr.xyz/assets/social-preview.jpg">
+<link rel="stylesheet" href="styles.css">
+<script defer src="site.js"></script>
+</head>
+<body>
+<nav>
+  <div class="wrap navin">
+    <a class="brand brand-logo" href="index.html" aria-label="Clouda OCR home"><img src="assets/logo-main.svg" alt="Clouda OCR"></a>
+    <div class="links">
+      <a class="" href="index.html">Home</a>
+      <a class="active" href="benchmark.html">Benchmark</a>
+      <a class="" href="progress.html">Progress</a>
+      <a class="" href="technology.html">Technology</a>
+      <a class="" href="support.html">Support</a>
+      <a class="" href="about.html">About</a>
+    </div>
+    <a class="navcta" href="https://github.com/sahrasayed3-crypto/clouda-ocr" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <button class="mobile-menu-btn" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="benchmark.html">Benchmark</a>
+      <a href="progress.html">Progress</a>
+      <a href="technology.html">Technology</a>
+      <a href="support.html">Support</a>
+      <a href="about.html">About</a>
+      <a class="support-link" href="https://github.com/sahrasayed3-crypto/clouda-ocr" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <div class="kicker">Benchmark</div>
+    <h1>Published evidence, and the evaluation now under way.</h1>
+    <p>Two separate records are kept on this page: the completed, published benchmark v0.1.0, and the larger current evaluation. They are never mixed, and every number here states its own status. The benchmark is evidence infrastructure for Clouda OCR — it supports the product thesis; it is not the product itself.</p>
+    <div class="page-meta">
+      <span>Published v0.1.0 — <span data-status="published_benchmark.pages">177</span> pages</span>
+      <span><span data-status="published_benchmark.models_full_coverage">6</span> full-coverage models</span>
+      <span>Current evaluation — <span data-status="current_benchmark.pages">462</span> held-out pages</span>
+      <span><span data-status="current_benchmark.models">10</span>-model evaluation plan</span>
+    </div>
+  </div>
+</header>
+
+<section id="published-benchmark">
+  <div class="wrap">
+    <div class="kicker">Published Benchmark</div>
+    <div class="sectionhead">
+      <h2>Benchmark v0.1.0 <span class="badge copper">Published · Historical</span></h2>
+      <p>Released <span data-status="published_benchmark.released">September 7, 2026</span>. A completed, published evaluation of <span data-status="published_benchmark.pages">177</span> distorted Arabic page images with <span data-status="published_benchmark.models_full_coverage">6</span> models achieving full <span data-status="published_benchmark.pages">177</span>/<span data-status="published_benchmark.pages">177</span> valid coverage. Results are specific to this benchmark and do not imply universal OCR performance.</p>
+    </div>
+
+    <div class="two-col" style="margin-bottom:18px">
+      <div class="list-card">
+        <h3>What is measured</h3>
+        <ul>
+          <li><b>Task:</b> page-level OCR on distorted Arabic document page images (photographic and rendering-style degradations: blur, compression, noise, skew, perspective, low resolution, contrast, shadow, faded paper, bleedthrough, combined profiles).</li>
+          <li><b>Primary metric:</b> <b>Normalized Arabic CER</b> (lower is better) — character error rate after a deterministic Arabic normalization (NFC, alef/ya unification, tatweel and diacritic removal, whitespace collapse), averaged over each model's valid evaluated pairs.</li>
+          <li><b>Also reported:</b> strict CER and WER. Error rates are not capped at 1.0 because insertion errors can make edit distance exceed reference length.</li>
+          <li><b>Runtime:</b> contextual only — compared within the same hardware environment.</li>
+        </ul>
+      </div>
+      <div class="list-card">
+        <h3>How results are anchored</h3>
+        <ul>
+          <li><b>Canonical manifest:</b> <span data-status="published_benchmark.pages">177</span> unique sample IDs define the benchmark registry and prevent silent subset drift.</li>
+          <li><b>Stored outputs:</b> per-sample model outputs are stored; all aggregates were recomputed offline from them with the canonical evaluator — no inference was rerun.</li>
+          <li><b>Deterministic decoding:</b> sampling disabled, batch size 1, fixed seed (20260825).</li>
+          <li><b>Integrity:</b> SHA-256 checksums over the release, plus sanitization, license-review and consistency audit artifacts.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Rank</th><th>Model</th><th>Valid pairs</th><th>Normalized Arabic CER</th><th>CER</th><th>WER</th><th>Hardware</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>HunyuanOCR-1.5</td><td>177/177</td><td class="num">0.391497</td><td class="num">0.564666</td><td class="num">0.719511</td><td>NVIDIA L4</td></tr>
+          <tr><td>2</td><td>MBZUAI/AIN-7B</td><td>177/177</td><td class="num">0.837028</td><td class="num">0.752905</td><td class="num">0.643977</td><td>RTX PRO 6000 Blackwell</td></tr>
+          <tr><td>3</td><td>Qari OCR 0.4.0</td><td>177/177</td><td class="num">1.076260</td><td class="num">1.419241</td><td class="num">1.638313</td><td>NVIDIA L4</td></tr>
+          <tr><td>4</td><td>Qwen3-VL-4B-Instruct</td><td>177/177</td><td class="num">1.286567</td><td class="num">2.007940</td><td class="num">1.529543</td><td>NVIDIA L4</td></tr>
+          <tr><td>5</td><td>DeepSeek-OCR-2</td><td>177/177</td><td class="num">1.486473</td><td class="num">1.727661</td><td class="num">1.549825</td><td>NVIDIA L4</td></tr>
+          <tr><td>6</td><td>Arabic Nougat Large</td><td>177/177</td><td class="num">2.226341</td><td class="num">2.391472</td><td class="num">1.876031</td><td>NVIDIA L4</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="metric-note">HunyuanOCR-1.5 achieved the best Normalized Arabic CER in published benchmark v0.1.0 (0.391497) among models with complete 177/177 valid coverage. This is a benchmark-specific statement about one metric on one published evaluation — not a general claim about OCR quality.</p>
+
+    <div class="note"><strong>Failures and exclusions.</strong> dots.mocr produced 169 valid outputs with 8 deterministic-empty failures and is reported separately from the primary 177/177 leaderboard. PaddleOCR-VL-1.6 failed its smoke run; its full benchmark run was never started, so it is unranked. Failure evidence is retained in the public release.</div>
+
+    <div class="actions">
+      <a class="btn primary" href="https://github.com/sahrasayed3-crypto/clouda-ocr-benchmark/blob/main/RESULTS.md" target="_blank" rel="noopener noreferrer">View Results</a>
+      <a class="btn light" href="https://github.com/sahrasayed3-crypto/clouda-ocr-benchmark/blob/main/METHODOLOGY.md" target="_blank" rel="noopener noreferrer">Methodology</a>
+      <a class="btn light" href="https://doi.org/10.5281/zenodo.22859930" target="_blank" rel="noopener noreferrer">Evidence Archive</a>
+    </div>
+    <p class="doi-line">DOI: <span data-status="published_benchmark.doi">10.5281/zenodo.22859930</span> — Benchmark v0.1.0</p>
+    <details class="techfiles">
+      <summary>Technical files</summary>
+      <ul>
+        <li><a href="https://github.com/sahrasayed3-crypto/clouda-ocr-benchmark" target="_blank" rel="noopener noreferrer">Benchmark repository</a></li>
+        <li><a href="https://github.com/sahrasayed3-crypto/clouda-ocr-benchmark/releases/tag/v0.1.0" target="_blank" rel="noopener noreferrer">v0.1.0 Release</a></li>
+        <li><a href="https://github.com/sahrasayed3-crypto/clouda-ocr-benchmark/blob/main/REPRODUCIBILITY.md" target="_blank" rel="noopener noreferrer">Reproducibility</a></li>
+        <li><a href="https://github.com/sahrasayed3-crypto/clouda-ocr-benchmark/blob/main/CHECKSUMS.txt" target="_blank" rel="noopener noreferrer">Checksums</a></li>
+        <li><a href="https://github.com/sahrasayed3-crypto/clouda-ocr-benchmark/releases/download/v0.1.0/clouda-ocr-benchmark-v0.1.0.zip" target="_blank" rel="noopener noreferrer">Download evidence (ZIP)</a></li>
+      </ul>
+    </details>
+    <div class="actions">
+      <a data-contact-type="research" class="btn light" href="https://mail.google.com/mail/?view=cm&fs=1&to=sohair%40cloudaocr.xyz&su=Clouda+OCR+%E2%80%94+Research+Inquiry&body=Hello+Sohair%2C%0A%0AI%27m+contacting+you+regarding+Clouda+OCR+research+%2F+benchmark+work.%0A%0ATopic%3A%0ADetails%3A%0A%0A" target="_blank" rel="noopener noreferrer">Discuss the Benchmark</a>
+    </div>
+  </div>
+</section>
+
+<section class="progress" id="current-evaluation">
+  <div class="wrap">
+    <div class="kicker">Benchmark expansion / Current evaluation</div>
+    <div class="sectionhead">
+      <h2>Current evaluation — 462 held-out pages <span class="badge">In progress</span></h2>
+      <p>An evaluation on <strong><span data-status="current_benchmark.pages">462</span> held-out Arabic pages</strong> across multiple OCR/VLM candidates is in progress and currently paused pending additional compute capacity. Results will be published only after the evaluation is complete.</p>
+    </div>
+    <div class="cards3">
+      <div class="card"><div class="num">Scope</div><h3><span data-status="current_benchmark.pages">462</span> held-out pages</h3><p>Defined by a frozen manifest with a recorded SHA-256 checksum, prepared from pinned dataset revisions with documented provenance and licensing.</p></div>
+      <div class="card"><div class="num">Plan</div><h3><span data-status="current_benchmark.models">10</span>-model evaluation plan</h3><p>A model registry of 10 candidates with pinned revisions and documented OCR prompts. Evaluation follows the same stored-outputs, canonical-evaluator discipline as v0.1.0.</p></div>
+      <div class="card"><div class="num">Status</div><h3>Paused — pending compute</h3><p>The run stopped in a controlled state with all completed work preserved; it resumes without recomputing finished pages once compute capacity is available.</p></div>
+    </div>
+    <div class="results-banner" style="margin-top:18px"><strong>Results: not published yet.</strong> No partial leaderboard, no interim winner, and no unvalidated metric claims will be shown for this evaluation. When complete, results will be validated and published separately from v0.1.0.</div>
+  </div>
+</section>
+
+<section class="scale">
+  <div class="wrap">
+    <div class="kicker">External context</div>
+    <div class="sectionhead">
+      <h2>Arabic document understanding remains difficult.</h2>
+      <p>KITAB-Bench provides independent evidence that modern Arabic document understanding still has substantial room for improvement across document domains.</p>
+    </div>
+    <div class="actions"><a class="btn ghost" href="https://aclanthology.org/2025.findings-acl.1135/" target="_blank" rel="noopener noreferrer">View KITAB-Bench Paper</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a class="footer-logo" href="index.html" aria-label="Clouda OCR home"><img src="assets/logo-dark.svg" alt="Clouda OCR"></a>
+      <small>Independent open-source Arabic OCR &amp; Document AI project.<br>Founder: Sohair Kairy Nour Wahbah</small>
+    </div>
+    <div class="footlinks">
+      <a href="benchmark.html">Benchmark</a>
+      <a href="https://github.com/sahrasayed3-crypto/clouda-ocr" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a data-contact-type="general" href="https://mail.google.com/mail/?view=cm&fs=1&to=contact%40cloudaocr.xyz&su=Clouda+OCR+%E2%80%94+General+Inquiry&body=Hello%2C%0A%0AI%27m+contacting+Clouda+OCR+regarding+a+general+inquiry.%0A%0ADetails%3A%0A%0A" target="_blank" rel="noopener noreferrer">Contact</a>
+      <a href="support.html#financial-support">Support</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
