@@ -75,9 +75,9 @@
   /* Mobile navigation */
   const b=document.querySelector('.mobile-menu-btn'),m=document.querySelector('.mobile-menu');
   if(b&&m){
-    b.addEventListener('click',()=>{const o=m.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});
-    m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{m.classList.remove('open');b.setAttribute('aria-expanded','false')}));
-    document.addEventListener('click',e=>{if(m.classList.contains('open')&&!m.contains(e.target)&&!b.contains(e.target)){m.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+    b.addEventListener('click',()=>{const o=m.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Close navigation':'Open navigation')});
+    m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{m.classList.remove('open');b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Open navigation')}));
+    document.addEventListener('click',e=>{if(m.classList.contains('open')&&!m.contains(e.target)&&!b.contains(e.target)){m.classList.remove('open');b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Open navigation')}});
   }
 
   applyContactLinks();

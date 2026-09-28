@@ -1,6 +1,6 @@
 # Clouda OCR Website
 
-Static five-page public website for Clouda OCR.
+Static six-page public website for Clouda OCR.
 
 Deploy the repository root directly to Cloudflare Pages. No build step is required.
 
