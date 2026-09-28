@@ -1,5 +1,5 @@
 {
-  "project_phase": "Benchmarking & data preparation",
+  "project_phase": "Model development & training",
   "software_release": {
     "status": "Released",
     "name": "Clouda OCR",
@@ -23,12 +23,19 @@
     "release_url": "https://github.com/sahrasayed3-crypto/clouda-ocr-benchmark/releases/tag/v0.1.0"
   },
   "current_benchmark": {
+    "version": "v1.0",
+    "name": "Clouda OCR Arabic OCR Model Selection Benchmark",
     "pages": 462,
     "models": 10,
+    "models_completed": 5,
+    "partial_runs": 3,
+    "failed_runs": 2,
     "manifest": "Frozen manifest",
-    "status_short": "In progress · currently paused pending additional compute capacity",
-    "results_status": "Not published yet",
-    "status_statement": "An evaluation on 462 held-out Arabic pages across multiple OCR/VLM candidates is in progress and currently paused pending additional compute capacity. Results will be published only after the evaluation is complete."
+    "status_short": "Complete · results published (quality-only)",
+    "results_status": "Published",
+    "status_statement": "The evaluation on 462 Arabic document pages across 10 OCR/VLM candidate models is complete. 5 models completed all 462 pages; 3 runs stopped early under the recorded status EARLY_STOPPED_NONCOMPETITIVE and are unranked; 2 runs failed compatibility or smoke checks. The public benchmark is quality-only: runtime, speed, and VRAM metrics are intentionally excluded.",
+    "repository_url": "https://github.com/sahrasayed3-crypto/clouda-ocr-model-selection-benchmark",
+    "release_url": "https://github.com/sahrasayed3-crypto/clouda-ocr-model-selection-benchmark/releases/tag/v1.0.0"
   },
   "hosted_product": {
     "status": "Not released"

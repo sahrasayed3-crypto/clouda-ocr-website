@@ -54,7 +54,7 @@
       <p class="subtitle">Open Arabic Document Intelligence</p>
       <p class="lead">Building Arabic OCR and Document Intelligence for difficult, degraded, scanned, and archival documents.</p>
       <div class="micro">Today: an open-source document runtime, independent Arabic OCR evaluation, provenance-aware data tooling, and RTL-aware document reconstruction.</div>
-      <div class="phase-chip"><i></i>Current phase: <strong data-status="project_phase">Benchmarking &amp; data preparation</strong></div>
+      <div class="phase-chip"><i></i>Current phase: <strong data-status="project_phase">Model development &amp; training</strong></div>
       <div class="actions">
         <a class="btn primary" href="benchmark.html">Explore the Benchmark</a>
         <a class="btn light" href="https://github.com/sahrasayed3-crypto/clouda-ocr" target="_blank" rel="noopener noreferrer">View on GitHub</a>
@@ -83,7 +83,7 @@
     <div class="kicker">What Clouda OCR is</div>
     <div class="sectionhead">
       <h2>One project, one name, one narrow wedge.</h2>
-      <p><strong>Clouda OCR is an Arabic-first, open-source document-processing and OCR infrastructure project</strong> for turning PDFs and scanned documents into reliable, editable, machine-usable outputs. The current runtime handles trusted born-digital text and document routing; scanned-page OCR remains gated behind validated model integration while model evaluation and data preparation continue.</p>
+      <p><strong>Clouda OCR is an Arabic-first, open-source document-processing and OCR infrastructure project</strong> for turning PDFs and scanned documents into reliable, editable, machine-usable outputs. The current runtime handles trusted born-digital text and document routing; scanned-page OCR remains gated behind validated model integration while the selected model's development and training continue.</p>
       <p style="margin-top:12px">The focus is deliberately narrow: <strong>Arabic-first OCR and document conversion for difficult and archival documents</strong>, with reliable editable and searchable structured output and independently measured model performance. Search, RAG, and archive intelligence are downstream future use cases — not current product claims.</p>
     </div>
     <div class="cards3">
@@ -110,7 +110,7 @@
       <div class="status-card">
         <span class="kick">Published Arabic OCR benchmark</span>
         <strong>Released</strong>
-        <a class="releaselink" href="benchmark.html">View benchmark (v0.1.0)</a>
+        <a class="releaselink" href="benchmark.html">View benchmark (v1.0)</a>
       </div>
       <div class="status-card">
         <span class="kick">Data + evaluation infrastructure</span>
@@ -130,7 +130,7 @@
       </div>
     </div>
     <div class="nextmilestone">
-      <b>Next milestone.</b> Complete the frozen <span data-status="current_benchmark.pages">462</span>-page / <span data-status="current_benchmark.models">10</span>-model evaluation and make the evidence-based model integration/adaptation decision.
+      <b>Next milestone.</b> The <span data-status="current_benchmark.pages">462</span>-page / <span data-status="current_benchmark.models">10</span>-model evaluation is complete (benchmark v1.0). Next: validate the selected-model training and adaptation pipeline.
     </div>
     <p class="quietline">Final OCR model and hosted API are not released yet.</p>
   </div>
@@ -155,26 +155,27 @@
   </div>
 </section>
 
-<section class="proof">
-  <div class="wrap proofgrid">
-    <div class="bigstat"><span data-status="published_benchmark.pages">177</span></div>
-    <div>
-      <h2>Published Benchmark v0.1.0</h2>
-      <p>Historical published evidence: <span data-status="published_benchmark.pages">177</span> distorted Arabic pages, <span data-status="published_benchmark.models_full_coverage">6</span> full-coverage model runs, public methodology, stored outputs, audit artifacts and SHA-256 checksums. Released <span data-status="published_benchmark.released">September 7, 2026</span>.</p>
-      <div class="source"><a href="https://github.com/sahrasayed3-crypto/clouda-ocr-benchmark/blob/main/RESULTS.md" target="_blank" rel="noopener noreferrer">View results</a> · <a href="https://github.com/sahrasayed3-crypto/clouda-ocr-benchmark/blob/main/METHODOLOGY.md" target="_blank" rel="noopener noreferrer">Methodology</a> · <a href="https://doi.org/10.5281/zenodo.22859930" target="_blank" rel="noopener noreferrer">Archived on Zenodo — DOI: <span data-status="published_benchmark.doi">10.5281/zenodo.22859930</span></a></div>
-      <div class="actions"><a class="btn ghost" href="benchmark.html">Open the Benchmark page</a></div>
-    </div>
-  </div>
-</section>
-
 <section>
   <div class="wrap">
     <div class="kicker">Current evaluation</div>
     <div class="sectionhead">
-      <h2>A larger benchmark is running — results come later.</h2>
-      <p>An evaluation on <strong><span data-status="current_benchmark.pages">462</span> held-out Arabic pages</strong>, defined by a frozen manifest, across a <strong><span data-status="current_benchmark.models">10</span>-model evaluation plan</strong> is in progress and currently paused pending additional compute capacity. Results will be published only after the evaluation is complete and validated.</p>
+      <h2>The current benchmark is complete — published as v1.0.</h2>
+      <p>The evaluation on <strong><span data-status="current_benchmark.pages">462</span> Arabic document pages</strong>, defined by a frozen manifest, across <strong><span data-status="current_benchmark.models">10</span> OCR/VLM candidate models</strong> is complete. <span data-status="current_benchmark.models_completed">5</span> models completed all 462 pages; <span data-status="current_benchmark.partial_runs">3</span> runs stopped early under the recorded status EARLY_STOPPED_NONCOMPETITIVE (unranked); <span data-status="current_benchmark.failed_runs">2</span> runs failed compatibility or smoke checks. The public benchmark is quality-only: runtime, speed, and VRAM metrics are intentionally excluded.</p>
     </div>
-    <div class="results-banner"><strong>Results: not published yet.</strong> No partial leaderboard, no interim winner, and no unvalidated metric claims will be shown here until the full run is finished and its aggregates are validated. Published v0.1.0 results remain separate.</div>
+    <div class="results-banner"><strong>Results: published in benchmark v1.0.</strong> The ranked complete results, partial-run statuses and evidence are on the <a href="benchmark.html#current-evaluation">Benchmark page</a>. Published v0.1.0 results remain a separate, historical record.</div>
+    <div class="actions"><a class="btn ghost" href="benchmark.html#current-evaluation">Open benchmark v1.0 results</a></div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="wrap proofgrid">
+    <div class="bigstat"><span data-status="published_benchmark.pages">177</span></div>
+    <div>
+      <h2>Historical Benchmark v0.1.0</h2>
+      <p>Historical published evidence: <span data-status="published_benchmark.pages">177</span> distorted Arabic pages, <span data-status="published_benchmark.models_full_coverage">6</span> full-coverage model runs, public methodology, stored outputs, audit artifacts and SHA-256 checksums. Released <span data-status="published_benchmark.released">September 7, 2026</span>.</p>
+      <div class="source"><a href="https://github.com/sahrasayed3-crypto/clouda-ocr-benchmark/blob/main/RESULTS.md" target="_blank" rel="noopener noreferrer">View results</a> · <a href="https://github.com/sahrasayed3-crypto/clouda-ocr-benchmark/blob/main/METHODOLOGY.md" target="_blank" rel="noopener noreferrer">Methodology</a> · <a href="https://doi.org/10.5281/zenodo.22859930" target="_blank" rel="noopener noreferrer">Archived on Zenodo — DOI: <span data-status="published_benchmark.doi">10.5281/zenodo.22859930</span></a></div>
+      <div class="actions"><a class="btn ghost" href="benchmark.html#published-benchmark">Open the Benchmark page</a></div>
+    </div>
   </div>
 </section>
 
@@ -182,8 +183,8 @@
   <div class="wrap">
     <div class="kicker">Why now</div>
     <div class="sectionhead">
-      <h2>The pieces exist. The next decision is compute-blocked.</h2>
-      <p>Benchmark v0.1.0 is published. The open-source runtime is released (v0.2.0). The expanded 462-page evaluation is frozen and ready. What blocks the next technical decision is compute and infrastructure capacity — not the absence of a plan. And the project is deliberately refusing to train a model before the evidence justifies it.</p>
+      <h2>The pieces exist. The evidence is in.</h2>
+      <p>The expanded <span data-status="current_benchmark.pages">462</span>-page / <span data-status="current_benchmark.models">10</span>-model evaluation is complete and published as benchmark v1.0 (the earlier v0.1.0 remains as a historical record). The open-source runtime is released (v0.2.0). The model-selection decision has been taken from the v1.0 results, and current work is the development, adaptation and training of the selected model.</p>
     </div>
   </div>
 </section>

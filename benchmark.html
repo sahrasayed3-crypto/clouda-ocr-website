@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Benchmark — Clouda OCR</title>
-<meta name="description" content="Clouda OCR benchmark evidence: published v0.1.0 results (177 distorted Arabic pages, 6 full-coverage models) and the current 462-page, 10-model evaluation.">
+<meta name="description" content="Clouda OCR benchmark evidence: the current Arabic OCR Model Selection Benchmark v1.0 (462 pages, 10 candidates) and the earlier published v0.1.0 results (177 distorted Arabic pages, 6 full-coverage models).">
 <meta property="og:title" content="Benchmark — Clouda OCR">
-<meta property="og:description" content="Clouda OCR benchmark evidence: published v0.1.0 results (177 distorted Arabic pages, 6 full-coverage models) and the current 462-page, 10-model evaluation.">
+<meta property="og:description" content="Clouda OCR benchmark evidence: the current Arabic OCR Model Selection Benchmark v1.0 (462 pages, 10 candidates) and the earlier published v0.1.0 results (177 distorted Arabic pages, 6 full-coverage models).">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Clouda OCR">
 <link rel="canonical" href="https://cloudaocr.xyz/benchmark.html">
@@ -49,20 +49,67 @@
 <header class="page-hero">
   <div class="wrap">
     <div class="kicker">Benchmark</div>
-    <h1>Published evidence, and the evaluation now under way.</h1>
-    <p>Two separate records are kept on this page: the completed, published benchmark v0.1.0, and the larger current evaluation. They are never mixed, and every number here states its own status. The benchmark is evidence infrastructure for Clouda OCR — it supports the product thesis; it is not the product itself.</p>
+    <h1>The current model-selection benchmark, and the earlier published record.</h1>
+    <p>Two separate records are kept on this page: the completed, published model-selection benchmark v1.0, and the earlier published benchmark v0.1.0. They are never mixed, and every number here states its own status. The benchmark is evidence infrastructure for Clouda OCR — it supports the product thesis; it is not the product itself.</p>
     <div class="page-meta">
+      <span>Current benchmark v1.0 — <span data-status="current_benchmark.pages">462</span> pages</span>
+      <span><span data-status="current_benchmark.models">10</span> candidates · <span data-status="current_benchmark.models_completed">5</span> complete runs</span>
       <span>Published v0.1.0 — <span data-status="published_benchmark.pages">177</span> pages</span>
       <span><span data-status="published_benchmark.models_full_coverage">6</span> full-coverage models</span>
-      <span>Current evaluation — <span data-status="current_benchmark.pages">462</span> held-out pages</span>
-      <span><span data-status="current_benchmark.models">10</span>-model evaluation plan</span>
     </div>
   </div>
 </header>
 
-<section id="published-benchmark">
+<section id="current-evaluation">
   <div class="wrap">
-    <div class="kicker">Published Benchmark</div>
+    <div class="kicker">Current benchmark</div>
+    <div class="sectionhead">
+      <h2>Clouda OCR Arabic OCR Model Selection Benchmark v1.0 <span class="badge green">Complete · Published</span></h2>
+      <p>A completed evaluation of <strong><span data-status="current_benchmark.pages">462</span> Arabic document pages</strong> across <strong><span data-status="current_benchmark.models">10</span> OCR/VLM candidate models</strong>. <span data-status="current_benchmark.models_completed">5</span> models completed all 462 pages, <span data-status="current_benchmark.partial_runs">3</span> runs stopped early under the recorded status EARLY_STOPPED_NONCOMPETITIVE, and <span data-status="current_benchmark.failed_runs">2</span> runs failed compatibility or smoke checks. The public benchmark is quality-only: runtime, speed, and VRAM metrics are intentionally excluded. Release integrity: <span data-status="current_benchmark.checksums_verified">7,198 / 7,198</span> release checksums verified, <span data-status="current_benchmark.checksum_mismatches">0</span> mismatches, <span data-status="current_benchmark.missing_files">0</span> missing files.</p>
+    </div>
+
+    <div class="cards3" style="margin-bottom:18px">
+      <div class="card"><div class="num">Corpus</div><h3>462 Arabic document pages</h3><p>400 pages from Misraj/Misraj-DocOCR and 62 pages from Misraj/KITAB_pdf_to_markdown_reviewed — 462 pages in total, defined by a frozen manifest.</p></div>
+      <div class="card"><div class="num">Metric</div><h3>Normalized Arabic CER</h3><p>Primary ranking metric: Normalized Arabic CER (lower is better). Raw CER and WER are also reported. Error rates are not capped at 1.0 because insertion errors can exceed reference length.</p></div>
+      <div class="card"><div class="num">Scope</div><h3>Quality-only benchmark</h3><p>The public benchmark publishes quality metrics only. Runtime, speed, and VRAM metrics are intentionally excluded from this release.</p></div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Rank</th><th>Model</th><th>Valid pairs</th><th>Normalized CER</th><th>Raw CER</th><th>Normalized WER</th><th>Raw WER</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>amad-iq/amad-vlm6</td><td>462/462</td><td class="num">0.405471</td><td class="num">0.408645</td><td class="num">0.533982</td><td class="num">0.536017</td></tr>
+          <tr><td>2</td><td>amad-iq/amad-vlm5</td><td>462/462</td><td class="num">0.406228</td><td class="num">1.049789</td><td class="num">0.542530</td><td class="num">0.544223</td></tr>
+          <tr><td>3</td><td>tencent/HunyuanOCR</td><td>462/462</td><td class="num">0.434648</td><td class="num">0.438131</td><td class="num">0.517221</td><td class="num">0.517424</td></tr>
+          <tr><td>4</td><td>YasserSami/Qari-OCR-0.4.0-VL-4B-Instruct</td><td>462/462</td><td class="num">2.163387</td><td class="num">2.140999</td><td class="num">2.728452</td><td class="num">2.731869</td></tr>
+          <tr><td>5</td><td>MBZUAI/AIN</td><td>462/462</td><td class="num">2.176870</td><td class="num">2.500256</td><td class="num">2.453322</td><td class="num">2.456118</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="metric-note">amad-iq/amad-vlm6 achieved the best Normalized Arabic CER in benchmark v1.0 (0.405471) among the 5 models with complete 462/462 valid coverage. Values are shown unrounded; full per-page records and aggregate definitions are in the public repository. This is a benchmark-specific statement about one metric on one evaluation — not a general claim about OCR quality.</p>
+
+    <div class="note"><strong>Partial and failed runs.</strong> Three candidates were stopped partway under the recorded status <code>EARLY_STOPPED_NONCOMPETITIVE</code> and are unranked: context212/alhazen-ocr (401/462 pages), hastyle/olmOCR-arabic-lora-v2 (188/462 pages), and AhmedZaky1/DIMI-Arabic-OCR-V2 (132/462 pages). These were controlled, recorded stops — not quality-based failures. Two candidates produced no full benchmark run: loay/Arabic-OCR-DeepSeek-OCR-2 (FAILED_INCOMPATIBLE — 0/462 successful pages) and sherif1313/Arabic-GLM-OCR-v2 (FAILED_SMOKE — no full benchmark run). Run evidence is retained in the public repository.</div>
+
+    <div class="actions">
+      <a class="btn primary" href="https://github.com/sahrasayed3-crypto/clouda-ocr-model-selection-benchmark/blob/main/RESULTS.md" target="_blank" rel="noopener noreferrer">View Results</a>
+      <a class="btn light" href="https://github.com/sahrasayed3-crypto/clouda-ocr-model-selection-benchmark/blob/main/METHODOLOGY.md" target="_blank" rel="noopener noreferrer">Methodology</a>
+      <a class="btn light" href="https://github.com/sahrasayed3-crypto/clouda-ocr-model-selection-benchmark" target="_blank" rel="noopener noreferrer">Benchmark Repository</a>
+    </div>
+    <details class="techfiles">
+      <summary>Technical files</summary>
+      <ul>
+        <li><a href="https://github.com/sahrasayed3-crypto/clouda-ocr-model-selection-benchmark" target="_blank" rel="noopener noreferrer">Benchmark repository</a></li>
+        <li><a href="https://github.com/sahrasayed3-crypto/clouda-ocr-model-selection-benchmark/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer">v1.0.0 Release</a></li>
+        <li><a href="https://github.com/sahrasayed3-crypto/clouda-ocr-model-selection-benchmark/blob/main/REPRODUCIBILITY.md" target="_blank" rel="noopener noreferrer">Reproducibility</a></li>
+        <li><a href="https://github.com/sahrasayed3-crypto/clouda-ocr-model-selection-benchmark/blob/main/CHECKSUMS.txt" target="_blank" rel="noopener noreferrer">Checksums</a></li>
+      </ul>
+    </details>
+  </div>
+</section>
+
+<section class="progress" id="published-benchmark">
+  <div class="wrap">
+    <div class="kicker">Earlier published benchmark</div>
     <div class="sectionhead">
       <h2>Benchmark v0.1.0 <span class="badge copper">Published · Historical</span></h2>
       <p>Released <span data-status="published_benchmark.released">September 7, 2026</span>. A completed, published evaluation of <span data-status="published_benchmark.pages">177</span> distorted Arabic page images with <span data-status="published_benchmark.models_full_coverage">6</span> models achieving full <span data-status="published_benchmark.pages">177</span>/<span data-status="published_benchmark.pages">177</span> valid coverage. Results are specific to this benchmark and do not imply universal OCR performance.</p>
@@ -125,22 +172,6 @@
     <div class="actions">
       <a data-contact-type="research" class="btn light" href="https://mail.google.com/mail/?view=cm&fs=1&to=sohair%40cloudaocr.xyz&su=Clouda+OCR+%E2%80%94+Research+Inquiry&body=Hello+Sohair%2C%0A%0AI%27m+contacting+you+regarding+Clouda+OCR+research+%2F+benchmark+work.%0A%0ATopic%3A%0ADetails%3A%0A%0A" target="_blank" rel="noopener noreferrer">Discuss the Benchmark</a>
     </div>
-  </div>
-</section>
-
-<section class="progress" id="current-evaluation">
-  <div class="wrap">
-    <div class="kicker">Benchmark expansion / Current evaluation</div>
-    <div class="sectionhead">
-      <h2>Current evaluation — 462 held-out pages <span class="badge">In progress</span></h2>
-      <p>An evaluation on <strong><span data-status="current_benchmark.pages">462</span> held-out Arabic pages</strong> across multiple OCR/VLM candidates is in progress and currently paused pending additional compute capacity. Results will be published only after the evaluation is complete.</p>
-    </div>
-    <div class="cards3">
-      <div class="card"><div class="num">Scope</div><h3><span data-status="current_benchmark.pages">462</span> held-out pages</h3><p>Defined by a frozen manifest with a recorded SHA-256 checksum, prepared from pinned dataset revisions with documented provenance and licensing.</p></div>
-      <div class="card"><div class="num">Plan</div><h3><span data-status="current_benchmark.models">10</span>-model evaluation plan</h3><p>A model registry of 10 candidates with pinned revisions and documented OCR prompts. Evaluation follows the same stored-outputs, canonical-evaluator discipline as v0.1.0.</p></div>
-      <div class="card"><div class="num">Status</div><h3>Paused — pending compute</h3><p>The run stopped in a controlled state with all completed work preserved; it resumes without recomputing finished pages once compute capacity is available.</p></div>
-    </div>
-    <div class="results-banner" style="margin-top:18px"><strong>Results: not published yet.</strong> No partial leaderboard, no interim winner, and no unvalidated metric claims will be shown for this evaluation. When complete, results will be validated and published separately from v0.1.0.</div>
   </div>
 </section>
 
