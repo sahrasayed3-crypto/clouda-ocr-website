@@ -3,12 +3,12 @@
   "software_release": {
     "status": "Released",
     "name": "Clouda OCR",
-    "version": "v0.2.0",
+    "version": "v0.2.1",
     "license": "Apache-2.0",
     "historical_note": "v0.2.0 was originally published under the release title 'Clouda PDF'",
-    "github_release_url": "https://github.com/sahrasayed3-crypto/clouda-ocr/releases/tag/v0.2.0",
-    "zenodo_record_url": "https://zenodo.org/records/22880981",
-    "doi": "10.5281/zenodo.22880981",
+    "github_release_url": "https://github.com/sahrasayed3-crypto/clouda-ocr/releases/tag/v0.2.1",
+    "zenodo_record_url": "https://zenodo.org/records/22903260",
+    "doi": "10.5281/zenodo.22903260",
     "concept_doi": "10.5281/zenodo.22880980"
   },
   "published_benchmark": {
@@ -31,6 +31,9 @@
     "partial_runs": 3,
     "failed_runs": 2,
     "manifest": "Frozen manifest",
+    "checksums_verified": "7,198 / 7,198",
+    "checksum_mismatches": 0,
+    "missing_files": 0,
     "status_short": "Complete · results published (quality-only)",
     "results_status": "Published",
     "status_statement": "The evaluation on 462 Arabic document pages across 10 OCR/VLM candidate models is complete. 5 models completed all 462 pages; 3 runs stopped early under the recorded status EARLY_STOPPED_NONCOMPETITIVE and are unranked; 2 runs failed compatibility or smoke checks. The public benchmark is quality-only: runtime, speed, and VRAM metrics are intentionally excluded.",
